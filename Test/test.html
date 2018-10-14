@@ -5,21 +5,28 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600|Sawarabi+Gothic" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 
 <body class="d-flex">
+
   <div class="wrapper d-flex">
 
-    <aside class="sidebar d-flex">
+    <aside class="navbar">
       <div class="logo">SDS</div>
-      <nav class="sidebar__menu d-flex">
-        <a href="#">Work</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-      </nav>
+      <div class="menu-wrapper">
+        <label class="menu-collapse" for="check">
+          <i class="fas fa-bars"></i>
+        </label>
+        <input type="checkbox" id="check">
+        <nav class="menu">
+          <a href="" class="menu_item">Work</a>
+          <a href="" class="menu_item">About</a>
+          <a href="" class="menu_item">Services</a>
+          <a href="" class="menu_item">Blog</a>
+          <a href="" class="menu_item">Contact</a>
+        </nav>
+      </div>
     </aside>
 
     <main class="d-flex">
@@ -63,7 +70,9 @@
       </section>
 
     </main>
+
   </div>
+
 </body>
 
 </html>
