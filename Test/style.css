@@ -262,35 +262,15 @@ a {
 /* article */
 
 /* responsive block */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 1025px) and (max-width: 1280px) {
+
   html {
     font-size:10px;
   }
 
-  .wrapper {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    max-width: 100%;
-    width: 100%;
-    padding: 10px;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .sidebar__menu {
-    padding: 0;
-    margin: 0;
-    flex-direction: row;
-  }
-
-  .sidebar a{
-    margin-left: 10px;
-  }
 }
-@media screen and (min-width: 481px) and (max-width: 767px) {
+
+@media (min-width: 768px) and (max-width: 1024px) {
 
   .wrapper {
     flex-direction: column;
@@ -311,10 +291,8 @@ a {
     flex-direction: row;
   }
 
-  .sidebar a{
+  .sidebar a {
     margin-left: 10px;
   }
 
-
 }
-@media screen and (max-width: 480px) {}
