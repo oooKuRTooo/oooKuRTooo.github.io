@@ -308,7 +308,7 @@ h5 {
 
 .check {
   justify-content: flex-start;
-  margin: 2% 0;
+  margin: 20px 0;
   margin-left: 2%;
   max-width: 971px;
   width: 100%;
@@ -599,7 +599,46 @@ input[name="mail"]::placeholder {
 
 /* responsive block */
 
+.s-responsive{
+  display: none;
+}
+
 @media (max-width: 1024px) {
+  .head-nav{
+    margin-right: 0;
+  }
+
+  .s-responsive{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .s-figure__item{
+    position: static;
+    width: 40%;
+    margin-top: 40px;
+  }
+
+  .s-figure__item h1 {
+    font-size: 3rem;
+  }
+
+  .s-figure__item_f3{
+    width: 40%;
+  }
+
+  .section_sec {
+    justify-content: flex-start;
+  }
+
+  .offers {
+    flex-direction: column;
+    max-width: 500px;
+  }
 
   .menu {
     flex-direction: column;
@@ -618,11 +657,8 @@ input[name="mail"]::placeholder {
     display: none;
   }
 
-  .s-figure__item_f3 {
-    width: 50%;
-    height: 25%;
-    left: 28%;
-    top:40%;
+  .resp-off {
+    display: none;
   }
 
 }
