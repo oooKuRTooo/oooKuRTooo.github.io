@@ -1,1 +1,0 @@
-oooKuRTooo.github.io
