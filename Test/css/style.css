@@ -702,6 +702,22 @@ section {
 	SECTION WORK (under development)
 =======================================*/
 
+.work {
+	padding-top: 110px;
+}
+
+.work .line {
+	margin: 40px 0;
+}
+
+.work .text {
+	margin-bottom: 100px;
+}
+
+.work-col {
+	flex-direction: column;
+}
+
 /*======================================
 	SECTION TESTIMONIAL
 =======================================*/
@@ -798,6 +814,7 @@ section {
 /*======================================
 	SECTION BLOG
 =======================================*/
+
 .blog .section-wr {
 	padding: 110px 0;
 	width: 100%;
@@ -929,6 +946,171 @@ section {
 }
 
 /*======================================
+	SECTION FOOT
+=======================================*/
+
+.foot {
+	background: #f8f8f8;
+	padding: 75px 0;
+}
+
+.foot .section-wr {
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.foot-subscribe {
+	flex-direction: column;
+	max-width: 480px;
+	width: 100%;
+}
+
+.foot-subscribe .logo {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 46px;
+	color: #cccccc;
+	margin-bottom: 40px;
+}
+
+.foot-subscribe .text {
+	text-align: left;
+	font-size: 15px;
+	margin-bottom: 50px;
+}
+
+.follow {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	color: #333333;
+	align-items: flex-end;
+}
+
+.follow span {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #333333;
+	margin-right: 5px;
+}
+
+.foot-subscribe .line {
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	margin: 20px 0;
+}
+
+.social {
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-size: 15px;
+	color: #999;
+	margin-bottom: 40px;
+}
+
+.social .fab {
+	color: #95e1d3;
+	margin-left: 15px;
+}
+
+input[type='email'] {
+	height: 40px;
+	border: 1px solid #e7e7e7;
+	color: #ccc;
+	padding-left: 10px;
+}
+
+input[type='email']::placeholder {
+	color: #ccc;
+}
+
+.foot .button {
+	height: 42px;
+	width: 150px;
+	align-items: center;
+	justify-content: center;
+	background-color: #95e1d3;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/*====================*/
+
+.foot-blogs {
+	flex-direction: column;
+	width: 335px;
+}
+
+.blogs-title {
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #333333;
+	margin-bottom: 40px;
+}
+
+.f-blogs-item {
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.f-blogs-text {
+	flex-direction: column;
+	margin-left: 15px;
+}
+
+.f-b-text-title {
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.f-b-date {
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-size: 13px;
+	color: #999;
+}
+
+/*=======================*/
+
+.foot-insta {
+	flex-direction: column;
+}
+
+.foot-insta-wr {
+	width: 280px;
+	flex-wrap: wrap;
+}
+
+.f-i-title {
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 40px;
+}
+
+.f-i-more {
+	margin-top: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-size: 13px;
+	color: #999;
+}
+
+.foot-insta img {
+	margin: 2px;
+}
+/*======================================
 	FOOTER
 =======================================*/
 
@@ -939,6 +1121,11 @@ footer {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
 	border-top: 1px solid #f8f8f8;
+}
+
+footer a{
+	color: #f38181;
+	margin-left: 5px;
 }
 
 /*======================================
