@@ -1,0 +1,154 @@
+/*=======================================
+	General
+=========================================
+	font-family: 'Amatic SC', cursive;
+=========================================*/
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font-family: 'Amatic SC', cursive;
+}
+
+ul, li, a, label{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+ul {
+	list-style: none;
+}
+
+/*=======================================
+	Header
+=========================================*/
+
+.header {
+	position: fixed;
+	background: #3A5A40;
+}
+
+.header a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.head-menu ul {
+	justify-content: space-between;
+}
+
+.head-menu a {
+	font-size: 28px;
+}
+
+.social ul{
+	justify-content: space-between;
+}
+
+.site-name {
+	font-size: 36px;
+}
+
+/*======== test ==========*/
+
+/*== menu ==*/
+
+label[for="menu-check"] {
+	font-size: 28px;
+	color: #fff;
+}
+
+input[type='checkbox'] {
+	display: none;
+}
+
+/*=======================================
+	Archive
+=========================================*/
+
+.archive {
+	padding-top: 60px;
+}
+
+
+
+
+
+
+
+
+/*=======================================
+	Media Query
+=========================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+	/*== head menu ==*/
+	.head-menu ul {
+		display: none;
+	}
+
+	input[type='checkbox']:checked + ul {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.site-name, .social {
+		display: none;
+	}
+
+	.header .row {
+		justify-content: center;
+	}
+
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+	
+	/*== head menu ==*/
+	.head-menu ul {
+		display: none;
+	}
+
+	input[type='checkbox']:checked + ul {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.site-name, .social {
+		display: none;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+	/*== head menu ==*/
+	label[for='menu-check'] {
+		display: none;
+	}
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+	/*== head menu ==*/
+	label[for='menu-check'] {
+		display: none;
+	}
+
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	/*== head menu ==*/
+	label[for='menu-check'] {
+		display: none;
+	}
+}
