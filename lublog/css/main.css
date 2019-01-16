@@ -11,8 +11,13 @@ html {
 body {
 	font-family: 'Amatic SC', cursive;
 	background: url(../img/bgr4.jpg) no-repeat;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
-	background-attachment: fixed; 
+	background-attachment: fixed !important;
+	position: static !important;
+	z-index: -1 !important;
 }
 
 ul, li, a, label{
@@ -55,6 +60,7 @@ ul {
 	font-size: 36px;
 }
 
+
 /*======== test ==========*/
 
 /*== menu ==*/
@@ -62,6 +68,7 @@ ul {
 label[for="menu-check"] {
 	font-size: 28px;
 	color: #fff;
+	justify-content: center;
 }
 
 input[type='checkbox'] {
@@ -75,12 +82,6 @@ input[type='checkbox'] {
 .archive {
 	padding-top: 60px;
 }
-
-
-
-
-
-
 
 
 /*=======================================
