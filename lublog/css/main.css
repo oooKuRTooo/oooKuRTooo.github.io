@@ -5,11 +5,14 @@
 =========================================*/
 
 html {
-	font-size: 18px;
+	font-size: 22px;
 }
 
 body {
 	font-family: 'Amatic SC', cursive;
+	background: url(../img/bgr.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed; 
 }
 
 ul, li, a, label{
