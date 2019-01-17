@@ -5,10 +5,10 @@ window.onscroll = function() {
   var scrolled = document.documentElement.scrollTop;
   
   if (lastScroll > scrolled) {
-  	menu.style.position = 'fixed';
+  	setTimeout(function(){menu.fadeIn('fast')}, 500);
   	lastScroll = scrolled;
   } else {
-  	menu.style.position = 'static';
+  	setTimeout(function(){menu.fadeOut('fast')}, 500);
   	lastScroll = scrolled;
   }
 }
