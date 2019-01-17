@@ -22,6 +22,7 @@ body * {
 }
 
 body {
+	height: 100vh;
 	background: url(https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
   	-webkit-background-size: cover !important;
   	-moz-background-size: cover;
