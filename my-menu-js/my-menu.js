@@ -15,13 +15,18 @@ collapseBtn.onclick = () => {
 	}
 }
 
+window.onscroll = function() {
+  	bgr.style.height = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
 
+
+/* working
 var bgr = document.querySelector('.bgr');
 
 window.onscroll = function() {
   bgr.style.width = '100%';
   bgr.style.height = '100%';
-}
+}*/
 
 /*
 var menu = document.querySelector('.header');
