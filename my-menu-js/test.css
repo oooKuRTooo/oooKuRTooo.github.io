@@ -5,6 +5,4 @@ body {
   	-o-background-size: cover;
   	background-size: cover;
   	background-attachment: fixed !important;
-  	position: static !important;
-  	z-index: -1 !important;
 }
