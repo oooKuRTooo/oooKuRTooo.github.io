@@ -35,20 +35,30 @@ window.onscroll = function() {
 var menu = document.querySelector('.header');
 var wrapper = document.querySelector('.wrapper');
 var lastScroll = 0;
+var delay = 0;
 
 wrapper.onscroll = function() {
   var scrolled = wrapper.scrollTop;
+  delay++;
   console.log(scrolled);
   console.log('scrolled');
-  
+
+  console.log(delay);
+
   if (lastScroll > scrolled) {
-  	menu.style.display = 'none';
-    headMenu.style.display = 'none';
-  	lastScroll = scrolled;
-    btnActive = false;
+    if (delay == 35) {
+      menu.style.display = 'flex';
+      lastScroll = scrolled;
+      delay = 0;
+    }
   } else {
-  	menu.style.display = 'flex';
-  	lastScroll = scrolled;
+    if (delay == 35) {
+      menu.style.display = 'none';
+      headMenu.style.display = 'none';
+      lastScroll = scrolled;
+      btnActive = false;
+      delay = 0;
+    }
   }
 }
 
