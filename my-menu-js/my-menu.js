@@ -14,12 +14,12 @@ collapseBtn.onclick = () => {
 		blur.style.display = 'none'
 	}
 }
-
+/*
 var bgr = document.querySelector('.bgr');
 
 window.onscroll = function() {
   	bgr.style.height = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-}
+}*/
 
 
 /* working
