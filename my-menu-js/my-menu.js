@@ -15,6 +15,15 @@ collapseBtn.onclick = () => {
 	}
 }
 
+
+var bgr = document.querySelector('.bgr');
+
+window.onscroll = function() {
+  bgr.style.width = '100%';
+  bgr.style.height = '100%';
+}
+
+/*
 var menu = document.querySelector('.header');
 var lastScroll = 0;
 
@@ -29,5 +38,6 @@ window.onscroll = function() {
   	lastScroll = scrolled;
   }
 }
+*/
 
 
