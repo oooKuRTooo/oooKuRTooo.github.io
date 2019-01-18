@@ -1,16 +1,13 @@
 body{
-  position: relative;
-}
-
-body::before {
-    background: url(https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=) no-repeat center center;
-    background-size: cover;
-    content: ' ';
-    height: 130%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    will-change: transform;
-    z-index: -1;
+  	background-image:url(https://images.unsplash.com/photo-1425321395722-b1dd54a97cf3?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover !important;
+	max-width:100%;
+	max-height:100%;
+	width:auto;
 }
