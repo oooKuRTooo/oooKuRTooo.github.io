@@ -46,13 +46,13 @@ wrapper.onscroll = function() {
   console.log(delay);
 
   if (lastScroll > scrolled) {
-    if (delay == 35) {
+    if (delay == 20) {
       menu.style.display = 'flex';
       lastScroll = scrolled;
       delay = 0;
     }
   } else {
-    if (delay == 35) {
+    if (delay == 20) {
       menu.style.display = 'none';
       headMenu.style.display = 'none';
       lastScroll = scrolled;
