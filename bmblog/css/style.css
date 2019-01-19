@@ -2,7 +2,6 @@
 		GENERAL
 
 		font-family: 'Amatic SC', cursive;
-
 =======================================*/
 
 body, .wrapper {
@@ -22,12 +21,37 @@ body {
 }
 
 .header *{
-	font-family: 'Amatic SC', cursive;
 	font-size: 36px;
 	text-decoration: none;
 	color: #fff;
 }
 
+.header {
+	z-index: 999999;
+}
+
+.site-name a, .menu-items a {
+	font-family: 'Amatic SC', cursive;
+}
+
+.menu-social {
+	align-items: center;
+}
+
+.fab {
+	font-size: 24px;
+}
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+ 	text-decoration: none;
+ 	color: #fff;
+}
+
+.header a:hover {
+	text-shadow: 0px 0px 20px #fff;
+}
 
 /*================================
 	ARCHIVE
@@ -124,12 +148,52 @@ h3, p {
 @media (max-width: 575.98px) {
 	.item:hover > .item-wr > .item--text {
 		background-color: transparent;
-		transform: translateY(-70%);
+		transform: translateY(-60%);
 	}
+
+	.menu-items {
+		justify-content: space-around;
+	}
+
+	.menu-items li, .menu-social li {
+		padding: 10px 0;
+	}
+
+	.menu-items {
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.menu-social {
+		width: 80%;
+		justify-content: space-around;
+	}
+
+	.head-menu {
+		align-items: center;
+	}
+
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
 
+	.menu-items li, .menu-social li {
+		padding: 10px 0;
+	}
+
+	.menu-items {
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.menu-social {
+		width: 80%;
+		justify-content: space-around;
+	}
+
+	.head-menu {
+		align-items: center;
+	}
 
 }
 /* Medium devices (tablets, 768px and up)*/
@@ -137,6 +201,24 @@ h3, p {
 
 	.masonry[data-columns]::before {
 		content: '2 .col-6';
+	}
+
+	.menu-items li, .menu-social li {
+		padding: 10px 0;
+	}
+
+	.menu-items {
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.menu-social {
+		width: 80%;
+		justify-content: space-around;
+	}
+
+	.head-menu {
+		align-items: center;
 	}
 
 }
