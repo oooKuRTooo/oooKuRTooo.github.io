@@ -32,22 +32,27 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
     var scrolled = wrapper.scrollTop;
     delay++;
 
+    console.log(menu.style.height)
+
     if (lastScroll > scrolled) {
       if (delay == 20) {
-        menu.style.position = 'fixed';
+        menu.style.display = 'flex';
         lastScroll = scrolled;
         delay = 0;
       }
     } else {
       if (delay == 20) {
-        menu.style.position = 'relative';
+        menu.style.display = 'none';
         headMenu.style.display = 'none';
         lastScroll = scrolled;
         btnActive = false;
         delay = 0;
       }
     }
+
+    if (scrolled < 80) menu.style.display = 'flex';
   }
+
 } else {
 
 }

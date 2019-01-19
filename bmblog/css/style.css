@@ -171,6 +171,16 @@ h3, p {
 
 	.head-menu {
 		align-items: center;
+		background-color: rgba(0,0,0,0.8);
+		border-top: 1px solid #fff;
+	}
+
+	.archive {
+		margin-top: 60px;
+	}
+
+	.header {
+		background-color: rgba(0,0,0,0.8);
 	}
 
 }
@@ -193,6 +203,16 @@ h3, p {
 
 	.head-menu {
 		align-items: center;
+		background-color: rgba(0,0,0,0.8);
+		border-top: 1px solid #fff;
+	}
+
+	.archive {
+		margin-top: 60px;
+	}
+
+	.header {
+		background-color: rgba(0,0,0,0.8);
 	}
 
 }
@@ -219,6 +239,16 @@ h3, p {
 
 	.head-menu {
 		align-items: center;
+		background-color: rgba(0,0,0,0.8);
+		border-top: 1px solid #fff;
+	}
+
+	.archive {
+		margin-top: 80px;
+	}
+
+	.header {
+		background-color: rgba(0,0,0,0.8);
 	}
 
 }
