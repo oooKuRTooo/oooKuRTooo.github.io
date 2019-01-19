@@ -20,11 +20,14 @@
 	height: 100vh; 
   overflow-y: scroll;
   border: 1px solid red;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
   background-color: rgba(0,0,0,0.4);
 }
+
 
 /* ========= General ============*/
 img, #collapse-btn {
@@ -42,7 +45,7 @@ ul, li, a {
 }
 
 .header {
-  position: fixed;
+  position: relative;
 }
 
 .header, .head-menu, .menu-items, .menu-social {

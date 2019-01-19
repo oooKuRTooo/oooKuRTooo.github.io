@@ -1,0 +1,62 @@
+
+/* ========================================
+    style for header menu
+==========================================*/
+
+#collapse-btn {
+  display: none;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header ul, li, a {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header {
+  background-color: rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.header, .head-menu, .menu-items, .menu-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.head-menu {
+  width: 70%;
+}
+
+.menu-items {
+  width: 50%;
+}
+
+.menu-social {
+  width: 30%;
+}
+
+@media (max-width: 991.98px) {
+  
+  .head-menu {
+    flex-direction: column;
+    width: 100vw;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  #collapse-btn {
+    display: flex;
+  }  
+
+}
+
+
+
