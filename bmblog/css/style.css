@@ -15,10 +15,29 @@ body {
 	background-attachment: fixed;
 }
 
+a:active,
+a:hover,  
+a {
+ 	text-decoration: none;
+ 	color: #fff;
+}
+
+p {
+	margin: 0;
+}
+
+h3, p {
+	font-family: 'Amatic SC', cursive;
+}
+
 .wrapper {
 	height: 100vh; 
 	overflow-y: scroll;
 }
+
+/*======================================
+		HEADER
+=======================================*/
 
 .header *{
 	font-size: 36px;
@@ -26,12 +45,20 @@ body {
 	color: #fff;
 }
 
-.header {
-	z-index: 999999;
-}
 
 .site-name a, .menu-items a {
 	font-family: 'Amatic SC', cursive;
+}
+
+.site-name {
+  padding-left: 85px;
+  position: relative;
+}
+.site-name img{
+  position: absolute;
+  left: 0;
+  width: 80px;
+  height: 80px;
 }
 
 .menu-social {
@@ -42,15 +69,57 @@ body {
 	font-size: 24px;
 }
 
-a:active, /* активная/посещенная ссылка */
-a:hover,  /* при наведении */
-a {
- 	text-decoration: none;
- 	color: #fff;
-}
-
 .header a:hover {
 	text-shadow: 0px 0px 20px #fff;
+}
+/*========= manu btn collapse ========*/
+
+#collapse-btn {
+  display: flex;
+  flex-direction: column;
+  height: 15px;
+  width: 20px;
+  justify-content: space-between;
+  margin-bottom:5px;
+}
+
+#collapse-btn span {
+  display: flex;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  transform-origin: -1px 0;
+}
+
+#collapse-btn {
+	display: none;
+}
+
+@keyframes lineOne {
+from {
+  transform: rotate(0);}
+50% {
+  transform: translateY(5px);
+  }
+to {
+  transform: rotate(45deg);}
+}
+
+@keyframes lineThree{
+from {
+  transform: rotate(0);}
+50% {
+  transform: translateY(-5px);
+  }
+to {
+  transform: rotate(-45deg);}
+}
+
+@keyframes lineTwo {
+from {
+  opacity: 1;}
+to {
+  opacity: 0;}
 }
 
 /*================================
@@ -60,7 +129,7 @@ a {
 
 .item {
 	margin: 20px 15px;
-	background: url(../img/post.jpg) no-repeat;
+	background: url(../img/post.jpg) no-repeat center;
 	background-size: cover;
 	overflow: hidden;
 	font-family: 'Amatic SC', cursive;
@@ -70,7 +139,7 @@ a {
 }
 
 .item-wr {
-	position: relative;
+	position: relative
 }
 
 .article-date {
@@ -87,14 +156,6 @@ a {
 	padding: 10px 10px;
 	background-color: rgba(0,0,0,0.5);
 	color: #fff;
-}
-
-p {
-	margin: 0;
-}
-
-h3, p {
-	font-family: 'Amatic SC', cursive;
 }
 
 .far {
@@ -146,6 +207,18 @@ h3, p {
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
+	#collapse-btn {
+		display: flex;
+	}
+
+	.site-name img{
+	  display: none;
+	}
+
+	.site-name {
+	  padding: 0;
+	}
+
 	.item:hover > .item-wr > .item--text {
 		background-color: transparent;
 		transform: translateY(-60%);
@@ -186,6 +259,17 @@ h3, p {
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
+	#collapse-btn {
+		display: flex;
+	}
+
+	.site-name img{
+	  display: none;
+	}
+
+	.site-name {
+	  padding: 0;
+	}
 
 	.menu-items li, .menu-social li {
 		padding: 10px 0;
@@ -218,9 +302,12 @@ h3, p {
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
+	#collapse-btn {
+		display: flex;
+	}
 
 	.masonry[data-columns]::before {
-		content: '2 .col-6';
+		content: '1 .col-8';
 	}
 
 	.menu-items li, .menu-social li {
