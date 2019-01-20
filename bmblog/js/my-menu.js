@@ -23,6 +23,7 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
     btnSpan1.style.animation = null;
     btnSpan2.style.animation = null;
     btnSpan3.style.animation = null;
+    headMenu.style.animation = null;
     btnSpan1.offsetHeight; /* trigger reflow */
 
     if (btnActive) {
@@ -36,10 +37,18 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
       btnSpan2.style.animationFillMode = "forwards";
       btnSpan3.style.animation = 'lineThree  1s';
       btnSpan3.style.animationFillMode = "forwards";
+
+      headMenu.style.animation = 'menuOn  1.5s';
+
       
       /*blur.style.display = 'flex'*/
     } else {
-      headMenu.style.display = 'none';
+      headMenu.style.animation = 'menuOn  1.5s reverse';
+      setTimeout(() => {
+        headMenu.style.display = 'none';
+      }, 1200);
+      /*
+      */
 
       /* animate */
       btnSpan1.style.animation = 'lineOne  1s reverse';
@@ -48,6 +57,8 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
       btnSpan2.style.animationFillMode = "forwards";
       btnSpan3.style.animation = 'lineThree  1s reverse';
       btnSpan3.style.animationFillMode = "forwards";
+
+      headMenu.style.animation = 'menuOn  1.5s reverse';
       /*
       collapseBtn.classList.remove('collapse-btn-on');
       collapseBtn.classList.add('collapse-btn-off');*/
@@ -66,7 +77,7 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
 
     if (lastScroll > scrolled) {
       if (delay == 20) {
-        
+
         /*==== null btn animate ======*/
         btnSpan1.style.animation = null;
         btnSpan2.style.animation = null;

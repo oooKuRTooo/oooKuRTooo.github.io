@@ -122,6 +122,15 @@ to {
   opacity: 0;}
 }
 
+/*===  head menu animate ===*/
+
+@keyframes menuOn {
+from {
+  opacity: 0;}
+to {
+  opacity: 1;}
+}
+
 /*================================
 	ARCHIVE
 =================================*/
