@@ -96,39 +96,48 @@ h3, p {
 }
 
 @keyframes lineOne {
-from {
-  transform: rotate(0);}
-50% {
-  transform: translateY(5px);
-  }
-to {
-  transform: rotate(45deg);}
+	from {
+	  transform: rotate(0);}
+	50% {
+	  transform: translateY(5px);
+	  }
+	to {
+	  transform: rotate(45deg);}
 }
 
 @keyframes lineThree{
-from {
-  transform: rotate(0);}
-50% {
-  transform: translateY(-5px);
-  }
-to {
-  transform: rotate(-45deg);}
+	from {
+	  transform: rotate(0);}
+	50% {
+	  transform: translateY(-5px);
+	  }
+	to {
+	  transform: rotate(-45deg);}
 }
 
 @keyframes lineTwo {
-from {
-  opacity: 1;}
-to {
-  opacity: 0;}
+	from {
+	  opacity: 1;}
+	to {
+	  opacity: 0;}
 }
 
 /*===  head menu animate ===*/
 
 @keyframes menuOn {
-from {
-  opacity: 0;}
-to {
-  opacity: 1;}
+	from {
+	  opacity: 0;}
+	to {
+	  opacity: 1;}
+}
+
+/*===  head menu and items animate ===*/
+
+@keyframes menuFade {
+	from {
+	  transform: translateY(-100%);}
+	to {
+	  transform: translateY(0%);}
 }
 
 /*================================

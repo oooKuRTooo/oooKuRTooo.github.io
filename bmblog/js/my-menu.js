@@ -3,6 +3,7 @@ var headMenu = document.querySelector('.head-menu');
 /*var blur = document.querySelector('.blur-backgound');*/
 var menu = document.querySelector('.header');
 var wrapper = document.querySelector('.wrapper');
+var siteName = document.querySelector('.site-name');
 var btnActive = false;
 var lastScroll = 80;
 var delay = 0;
@@ -82,7 +83,9 @@ if(window.matchMedia('(max-width: 991.98px)').matches) {
         btnSpan1.style.animation = null;
         btnSpan2.style.animation = null;
         btnSpan3.style.animation = null;
-
+        menu.style.animation = 'menuFade  0.5s';
+        collapseBtn.style.animation = 'menuFade  1s';
+        siteName.style.animation = 'menuFade  1s';
         menu.style.display = 'flex';
         lastScroll = scrolled;
         delay = 0;
