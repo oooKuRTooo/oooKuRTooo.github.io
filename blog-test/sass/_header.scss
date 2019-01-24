@@ -1,0 +1,44 @@
+// styles for header;
+
+#header {
+	@extend %d-flex-row;
+	padding: 0 70px;
+	height: 160px;
+	box-sizing: border-box;
+	justify-content: space-between;
+	align-items: center;
+	a {
+		text-transform: uppercase;
+	}
+}
+
+.logo{
+	a {
+		font-family: $incons;
+		font-size: 30px;
+		color: #000;
+		letter-spacing: 5px;
+	}
+}
+
+ul {
+	@extend %d-flex-row;
+	@extend %reset-mp;
+	list-style: none;
+	justify-content: space-between;
+	li {
+		@extend %d-flex-row;
+		@extend %reset-mp;
+	}
+
+	a {
+		font-family: $playfair;
+		font-size: 14px;
+		color: $gray;
+	}
+}
+
+#header-manu {
+	max-width: 570px;
+	width: 100%;
+}
