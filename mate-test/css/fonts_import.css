@@ -1,0 +1,61 @@
+/*=================================================
+    import fonts
+==================================================*/
+
+@font-face {
+    font-family: "Muller";
+    src: url(./fonts/MullerBold.otf) format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Muller";
+    src: url(./fonts/MullerMedium.otf) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Muller";
+    src: url(./fonts/MullerRegular.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Visby";
+    src: url(./fonts/VisbyCF-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Visby";
+    src: url(./fonts/VisbyCF-ExtraBold.ttf) format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Visby";
+    src: url(./fonts/VisbyCF-Heavy.ttf) format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Visby";
+    src: url(./fonts/VisbyCF-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Visby";
+    src: url(./fonts/VisbyCF-Thin.ttf) format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
