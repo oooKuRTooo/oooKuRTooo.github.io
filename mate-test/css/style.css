@@ -84,15 +84,20 @@ h3 {
     position: absolute;
     top: 0;
 }
+
+.text-wr,
+.logo,
+.scroll-btn {
+    z-index: 10000;
+}
 /*==================================================
     first section
 ==================================================*/
 
 #first-section {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(to bottom, #f9e9a7, #63c9c4);
-    padding: 16.15% 0 0 10%;
     z-index: 0;
     box-sizing: border-box;
 }
@@ -100,7 +105,8 @@ h3 {
 .logo {
     position: absolute;
     top: 12px;
-    z-index: 0;
+    z-index: 1;
+    left: 10%;
 }
 
     .logo::before {
@@ -117,6 +123,7 @@ h3 {
     }
 
 .text-wr {
+    margin: 16.67% 0 0 9.9%;
     width: 47%; 
 }
 
@@ -127,9 +134,9 @@ h3 {
 }
 
 .reg-form {
-    margin-top: 8.5%;
-    padding: 4% 0;
-    width: 70%;
+    margin-top: 8.8%;
+    padding: 5.4% 0;
+    width: 70.2%;
     background-color: #fff;
     border-radius: 100px;
     position: relative;
@@ -153,25 +160,43 @@ h3 {
 }
 
 .btn {
-    width: 60%;
-    padding: 15px 0;
-    margin-top: 15px;
+    width: 78%;
+    padding: 20px 0;
+    margin-top: 20px;
     justify-content: center;
     background-color: #ff8141;
     border-radius: 40px;
     text-transform: uppercase;
     color: #fff;
+    transition: 1s;
+}
+
+.btn:hover {
+    transform: scaleX(1.1);
+    color: cyan;
 }
 
 #scroll-btn {
     position: absolute;
     left: calc(50% - 10px);
-    bottom: 10px;
+    bottom: 20px;
     z-index: 1000;
     cursor: pointer;
     border-style: solid;
     border-width: 30px 20px 20px 20px; /* size & shape */ 
     border-color: #fff transparent transparent transparent;  /* colors */ 
+    animation: scroll 2s infinite ease-in-out;
+}
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px)
+    }
+    to {
+        transform: translateY(0)
+    }
 }
 
 #scroll-btn::before {
@@ -205,38 +230,38 @@ h3 {
 #parallax {
     position: absolute;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     height: 100%;
-    bottom: 0px;
+    bottom: 0;
     right: 0;
-    z-index: -1;
+    z-index: 0;
 }
 
 #parallax img:nth-child(1){
     position: absolute;
-    bottom: -100px;
+    bottom: 2.2%;
     right: -20px;
     transition: 7000ms;
 }
 
 #parallax img:nth-child(2){
     position: absolute;
-    bottom: 30%;
-    right: 18%;
+    bottom: 32%;
+    right: 10%;
     transition: 6000ms;
 }
 
 #parallax img:nth-child(3){
     position: absolute;
-    bottom: 45%;
-    right: 25%;
+    bottom: 40%;
+    right: 15%;
     transition: 5000ms;
 }
 
 #parallax img:nth-child(4){
     position: absolute;
-    bottom: 0;
-    right: 25%;
+    bottom: 18%;
+    right: 20%;
     transition: 4000ms;
 }
 
@@ -251,7 +276,7 @@ h3 {
 }
 
 .video {
-    width: 56%;
+    width: 56.25%;
     height: 100vh;
     position: relative;
 }
@@ -266,12 +291,14 @@ h3 {
 #video-bgr {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
     background: url(../img/frame-bgr.png) no-repeat center;
     background-size: cover;
-    filter: grayscale(.75)
+    filter: grayscale(.75);
+    z-index: 1;
+    transition: 2s;
 }
 
 .video-hover::before {
@@ -282,14 +309,14 @@ h3 {
     top: 55%;
     left: 55%;
     background: url(../img/video-arrow.png) no-repeat;
-    animation: shadow 2s 1 ease-in-out;
+    animation: shadow 4s 1 ease-in-out;
     animation-fill-mode: both;
 }
 
 @keyframes shadow {
     from {opacity: 0;}
     to {opacity: 1;}
-    }
+}
 
 #play-btn {
     position: absolute;
@@ -300,7 +327,17 @@ h3 {
     left: calc(50% - 50px);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
-    cursor: pointer
+    cursor: pointer;
+    transition: 1s;
+    z-index: 2;
+}
+
+#play-btn:hover {
+    transform: scale(1.2, 1.2);
+}
+
+#play-btn:hover ~ #video-bgr {
+    opacity: 0.1;
 }
 
 #play-btn::before {
@@ -314,21 +351,22 @@ h3 {
     filter: drop-shadow(0 0 5px #000);  /* тень */ 
 }
 
+
 .features {
-    width: 44%;
+    width: 43.75%;
     justify-content: center;
     align-items: center;
 }
 
 .f-wr {
-    width: 70%;
+    width: 71%;
 }
 
 .f-wr h3 {
     font-family: 'Visby', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 46px;
     color: #273d50;
 }
 
@@ -338,16 +376,20 @@ h3 {
     font-family: 'Visby', sans-serif;;
     font-weight: 300;
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.f-wr li:last-child {
+    margin-bottom:40px;
 }
 
 .f-wr span {
     background: url(../img/heart.png) no-repeat left 20%;
+    background-size: 17px 18px;
     padding-left: 30px;
     font-family: 'Visby', sans-serif;;
     font-weight: 100;
     font-size: 1rem;
-    margin-bottom: 10px;
 }
 /*==================================================
     footer
@@ -362,12 +404,28 @@ footer {
     font-family: 'Visby', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 
 }
 
 footer h2 {
+    width: 600px;
+    height: 41px;
+    overflow: hidden;
+    word-wrap: none;
     font-family: 'Visby', sans-serif;
     font-weight: 800;
+    font-size: 1.8rem;
+    animation: type 5s steps(10) infinite;
+    transition: 0.5s;
+}
+
+@keyframes type {
+    from { width: 0; }
+    to {width: 600; }
+}
+
+@keyframes play { 
+    from{ transform: translateX(0); } 
+    to{ transform: translateX(200px); }
 }
 
 /*==================================================
@@ -382,8 +440,42 @@ footer h2 {
         align-items: center;
     }
 
-    #parallax {
-        display: none;
+    .text-wr {
+        width: 70%;
+        margin: 40% 0 0 9.9%;
+    }
+
+    .reg-form {
+        width: 120%;
+    }
+
+    #video {
+        width: 95%;
+        height: 200px;
+        margin-top: 10px;
+    }
+
+    #video-placeholder {
+        height: 100%;
+    }
+
+    .features {
+        width: 100%;
+        padding: 20px;
+    }
+
+    footer h2 {
+        width: 310px;
+        height: 18px;
+        font-size: 16px;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    html {font-size: 10px;}
+    #sec-section {
+        flex-direction: column;
+        align-items: center;
     }
 
     .text-wr {
@@ -405,23 +497,51 @@ footer h2 {
     }
 
     footer h2 {
-        font-size: 14px;
+        width: 360px;
+        height: 20px;
+        font-size: 18px;
     }
-}
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767.98px) {
-
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
+    html {font-size: 10px;}
+    #sec-section {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    #video {
+        width: 95%;
+        margin-top: 10px;
+    }
+
+    .features {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .f-wr {
+        align-items: center;
+    }
+
+    footer h2 {
+        width: 360px;
+        height: 20px;
+        font-size: 18px;
+    }
 }
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1499.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
     html {font-size: 12px;}
     .f-wr li {font-size: 1.5rem;}
 }
+
+/* trash devices (my laptop)*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+    html {font-size: 16px;}
+    .f-wr li {font-size: 1.1rem;}
+}
+
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1500px) {
-
 }

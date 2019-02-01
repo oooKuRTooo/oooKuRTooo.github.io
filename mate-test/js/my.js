@@ -9,6 +9,45 @@ var videoBgr = document.querySelector('#video-bgr');
 var playBtn = document.querySelector('#play-btn');
 var video = document.querySelector('#video');
 
+// you tube api
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-placeholder', {
+        width: 600,
+        height: 400,
+        videoId: 'Xa0Q0J5tOP0',
+        playerVars: {
+            loop: 1,
+            fs: 0,
+            controls: 1,
+            color: 'white',
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+        events: {
+            onReady: initialize
+        }
+    });
+}
+
+function initialize(){
+
+    // Обновляем элементы управления и загружаем
+    updateTimerDisplay();
+    updateProgressBar();
+
+    // Сброс старого интервала
+    clearInterval(time_update_interval);
+
+    // Запускаем обновление таймера и дорожки проигрывания
+    // каждую секунду.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+}
+
+//
+
 document.addEventListener('mousemove', function(event) {
     if (event.clientX > screen.width / 2) {
         parallaxOne.style.transform = "translateX(25px)";
@@ -33,8 +72,18 @@ scrollBtn.onclick = () => {
 playBtn.onclick = () => {
     videoBgr.style.display = 'none';
     playBtn.style.display = 'none';
+    player.unMute();
+    player.seekTo(0);
 }
 
-video.onmousemove = () => {
-    document.querySelector('#video-bgr').classList.add('video-hover');
+var isPlay = false;
+
+window.onscroll = () => {
+    console.log('22');
+    if ((pageYOffset > innerHeight - 100) && !isPlay) {
+        document.querySelector('#video-bgr').style.opacity = '0.1';
+        player.mute();
+        player.seekTo(0);
+        isPlay = !isPlay;
+    }
 }
