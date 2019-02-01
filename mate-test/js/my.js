@@ -49,17 +49,19 @@ function initialize(){
 //
 
 document.addEventListener('mousemove', function(event) {
-    if (event.clientX > screen.width / 2) {
-        parallaxOne.style.transform = "translateX(25px)";
-        parallaxTwo.style.transform = "translateX(25px)";
-        parallaxThree.style.transform = "translateX(-10px)";
-        parallaxFour.style.transform = "translateX(25px)";
-    } else {
-        parallaxOne.style.transform = 'translateX(-25px)';
-        parallaxTwo.style.transform = "translateX(-25px)";
-        parallaxThree.style.transform = "translateX(10px)";
-        parallaxFour.style.transform = "translateX(-25px)";
-    }
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        if (event.clientX > screen.width / 2) {
+            parallaxOne.style.transform = "translateX(25px)";
+            parallaxTwo.style.transform = "translateX(25px)";
+            parallaxThree.style.transform = "translateX(-10px)";
+            parallaxFour.style.transform = "translateX(25px)";
+        } else {
+            parallaxOne.style.transform = 'translateX(-25px)';
+            parallaxTwo.style.transform = "translateX(-25px)";
+            parallaxThree.style.transform = "translateX(10px)";
+            parallaxFour.style.transform = "translateX(-25px)";
+        }
+    }  
 });
 
 scrollBtn.onclick = () => {
@@ -87,3 +89,6 @@ window.onscroll = () => {
         isPlay = !isPlay;
     }
 }
+
+
+

@@ -442,11 +442,12 @@ footer h2 {
 
     .text-wr {
         width: 70%;
-        margin: 40% 0 0 9.9%;
+        margin: 50% 0 0 9.9%;
     }
 
     .reg-form {
         width: 120%;
+        margin-top: 5%;
     }
 
     #video {
@@ -468,6 +469,54 @@ footer h2 {
         width: 310px;
         height: 18px;
         font-size: 16px;
+    }
+
+    #parallax img:nth-child(1){
+        width: 50%;
+        position: absolute;
+        bottom: 2.2%;
+        right: -20px;
+        transition: 7000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(2){
+        width: 35%;
+        position: absolute;
+        bottom: 20%;
+        right: 14%;
+        transition: 6000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(3){
+        width: 55%;
+        position: absolute;
+        bottom: 30%;
+        right: 20%;
+        transition: 5000ms;
+        animation: paral2 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(4){
+        width: 80%;
+        position: absolute;
+        bottom: 20%;
+        right: 40%;
+        transition: 4000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+
+    @keyframes paral1 {
+        from { transform: translateX(0); }
+        50% { transform: translateX(25px); }
+        to { transform: translateX(0); }
+    }
+
+    @keyframes paral2 {
+        from { transform: translateX(0); }
+        50% { transform: translateX(-10px); }
+        to { transform: translateX(0); }
     }
 }
 /* Small devices (landscape phones, 576px and up)*/
@@ -504,7 +553,7 @@ footer h2 {
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-    html {font-size: 10px;}
+    html {font-size: 16px;}
     #sec-section {
         flex-direction: column;
         align-items: center;
@@ -540,6 +589,37 @@ footer h2 {
 @media (min-width: 1200px) and (max-width: 1400px) {
     html {font-size: 16px;}
     .f-wr li {font-size: 1.1rem;}
+    #parallax img:nth-child(1){
+        width: 30%;
+        position: absolute;
+        bottom: 2.2%;
+        right: -20px;
+        transition: 7000ms;
+    }
+    
+    #parallax img:nth-child(2){
+        position: absolute;
+        bottom: 32%;
+        right: 10%;
+        transition: 6000ms;
+    }
+    
+    #parallax img:nth-child(3){
+        position: absolute;
+        bottom: 40%;
+        right: 15%;
+        transition: 5000ms;
+    }
+    
+    #parallax img:nth-child(4){
+        position: absolute;
+        bottom: 18%;
+        right: 20%;
+        transition: 4000ms;
+    }
+    
+    #scroll-btn {
+        bottom: 0px;
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
