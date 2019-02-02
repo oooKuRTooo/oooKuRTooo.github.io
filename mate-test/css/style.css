@@ -680,9 +680,13 @@ footer h2 {
     
     #scroll-btn {
         bottom: 0px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1500px) {
-    html {font-size: 22px
+    .text-wr {
+        margin: 10% 0 0 9.9%;
+    }
+    html {font-size: 22px;}
 }
