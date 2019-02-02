@@ -8,7 +8,7 @@
 ==================================================
     my reset
 ==================================================*/
-body, section, h1, h2, h3, h4, h5, h5, ul, li {
+body, section, h1, h2, h3, h4, h5, h5, ul, li, span {
     margin: 0;
     padding: 0;
 }
@@ -131,6 +131,11 @@ h3 {
     margin-bottom: 5.5%;
     font-size: 1.45rem;
     color: #44a09b;
+}
+
+.text-wr > h1 > span {
+    display: inline;
+    font-weight: bold;
 }
 
 .reg-form {
