@@ -9,19 +9,18 @@ var videoBgr = document.querySelector('#video-bgr');
 var playBtn = document.querySelector('#play-btn');
 var video = document.querySelector('#video');
 
-// you tube api
-
+/*==================================================
+    you tube api - для роботи з плейером you tube
+==================================================*/
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
-        width: 600,
-        height: 400,
-        videoId: 'Xa0Q0J5tOP0',
+        videoId: 'gCcx85zbxz4',
         playerVars: {
-            loop: 1,
-            fs: 0,
-            controls: 1,
-            color: 'white',
-            playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+            loop: 1, // loop playlist / зациклюєм плейлист
+            fs: 0, // off play btn / забираєм стандартну кнопку плей
+            controls: 1, // show interface / показуєм елементи управління
+            color: 'white', // color interface / колір інтерфейсу
+            playlist: 'taJ60kskkns,FG0fTKAqZ5g' // плейлист 
         },
         events: {
             onReady: initialize
@@ -30,24 +29,21 @@ function onYouTubeIframeAPIReady() {
 }
 
 function initialize(){
-
-    // Обновляем элементы управления и загружаем
+    // update inteface
     updateTimerDisplay();
     updateProgressBar();
-
-    // Сброс старого интервала
+    // reset time - interval
     clearInterval(time_update_interval);
-
-    // Запускаем обновление таймера и дорожки проигрывания
-    // каждую секунду.
+    // start timer update every sec
     time_update_interval = setInterval(function () {
         updateTimerDisplay();
         updateProgressBar();
     }, 1000)
 }
 
-//
-
+/*=======================================================
+    animation of first section - анімація першої секції
+=========================================================*/
 document.addEventListener('mousemove', function(event) {
     if(window.matchMedia('(min-width: 992px)').matches) {
         if (event.clientX > screen.width / 2) {
@@ -63,19 +59,25 @@ document.addEventListener('mousemove', function(event) {
         }
     }  
 });
-
+/*=======================================================
+    for scroll btn - скролл до другої секції
+=========================================================*/
 scrollBtn.onclick = () => {
     document.querySelector('#scroll-anchor').scrollIntoView({
         behavior: 'smooth',
         block: 'start'
     });
 }
+/*=======================================================
+    video bgr fade and video play - 
+    ховаєм бекграунд відео та запускаєм відео
+=========================================================*/
 
 playBtn.onclick = () => {
     videoBgr.style.display = 'none';
     playBtn.style.display = 'none';
-    player.unMute();
-    player.seekTo(0);
+    player.unMute(); // volume on
+    player.seekTo(0); // time play
 }
 
 var isPlay = false;
@@ -84,11 +86,31 @@ window.onscroll = () => {
     console.log('22');
     if ((pageYOffset > innerHeight - 100) && !isPlay) {
         document.querySelector('#video-bgr').style.opacity = '0.1';
-        player.mute();
+        player.mute(); // volume off
         player.seekTo(0);
         isPlay = !isPlay;
     }
 }
 
+/*=======================================================
+    put current date in #date - 
+    показуєм дату та час
+=========================================================*/
+var monthsList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var daysList = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
+setInterval(() => {
+    var date = new Date();
+    var dayPref;
+    if (date.getDate() === 1) dayPref = 'st, ';
+    else if (date.getDate() === 2) dayPref = 'nd, ';
+    else if (date.getDate() === 3) dayPref = 'rd, ';
+    else dayPref = 'th, ';
+
+    function isLessTen (num) { // no comments
+        return num < 10 ? '0' + num : String(num);
+    }
+
+    document.querySelector('#date').innerHTML = daysList[date.getDay()] + ', ' + monthsList[date.getMonth()] + ', ' + date.getDate() + dayPref + isLessTen(date.getHours()) + ':' + isLessTen(date.getMinutes()) + ':' + isLessTen(date.getSeconds()) + ' GTM' + (-date.getTimezoneOffset()/60);
+}, 1000);
 

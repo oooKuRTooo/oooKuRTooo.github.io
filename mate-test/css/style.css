@@ -337,7 +337,7 @@ h3 {
 }
 
 #play-btn:hover ~ #video-bgr {
-    opacity: 0.1;
+    opacity: 0.3;
 }
 
 #play-btn::before {
@@ -528,16 +528,23 @@ footer h2 {
     }
 
     .text-wr {
-        width: 90%;
+        width: 60%;
+        margin: 35% 0 0 9.9%;
     }
 
-    #first-section {
-        padding: 40% 0 0 10%;
+    .reg-form {
+        width: 120%;
+        margin-top: 5%;
     }
 
     #video {
         width: 95%;
+        height: 200px;
         margin-top: 10px;
+    }
+
+    #video-placeholder {
+        height: 100%;
     }
 
     .features {
@@ -546,9 +553,57 @@ footer h2 {
     }
 
     footer h2 {
-        width: 360px;
-        height: 20px;
-        font-size: 18px;
+        width: 310px;
+        height: 18px;
+        font-size: 16px;
+    }
+
+    #parallax img:nth-child(1){
+        width: 50%;
+        position: absolute;
+        bottom: 2.2%;
+        right: -20px;
+        transition: 7000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(2){
+        width: 35%;
+        position: absolute;
+        bottom: 20%;
+        right: 14%;
+        transition: 6000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(3){
+        width: 55%;
+        position: absolute;
+        bottom: 30%;
+        right: 20%;
+        transition: 5000ms;
+        animation: paral2 6s infinite ease-in-out;
+    }
+    
+    #parallax img:nth-child(4){
+        width: 80%;
+        position: absolute;
+        bottom: 20%;
+        right: 40%;
+        transition: 4000ms;
+        animation: paral1 6s infinite ease-in-out;
+    }
+
+    @keyframes paral1 {
+        from { transform: translateX(0); }
+        50% { transform: translateX(25px); }
+        to { transform: translateX(0); }
+    }
+
+    @keyframes paral2 {
+        from { transform: translateX(0); }
+        50% { transform: translateX(-10px); }
+        to { transform: translateX(0); }
     }
 }
 /* Medium devices (tablets, 768px and up)*/
@@ -589,6 +644,11 @@ footer h2 {
 @media (min-width: 1200px) and (max-width: 1400px) {
     html {font-size: 16px;}
     .f-wr li {font-size: 1.1rem;}
+
+    .text-wr {
+        margin-top: 12%;
+    }
+
     #parallax img:nth-child(1){
         width: 30%;
         position: absolute;
@@ -624,4 +684,5 @@ footer h2 {
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1500px) {
+    html {font-size: 22px
 }
