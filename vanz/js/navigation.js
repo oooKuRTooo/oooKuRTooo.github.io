@@ -98,6 +98,14 @@ class Navigation {
     linear(timeFraction) {
         return timeFraction;
     }
+
+    circ(timeFraction) {
+        return 1 - Math.sin(Math.acos(timeFraction));
+    }
+
+    quad(progress) {
+        return Math.pow(progress, 2);
+    }
     
     animation(progress, startPos, distance) {
         console.log('progress' + progress);
@@ -116,8 +124,8 @@ class Navigation {
         let difference = currentScroll - finishPoint;
         console.log('index' + index);
         this.render({
-            duration: Math.abs(lastIndex - this.activeDot) * 200,
-            timing: this.linear,
+            duration: /*Math.abs(lastIndex - this.activeDot)*/800,
+            timing: this.quad,
             draw: this.animation,
             distance: difference,
             startPos: currentScroll
@@ -150,14 +158,15 @@ class navPanel {
         
         window.onwheel = (e) => {
             console.log('this.isDown : ' + this.isDown);
-            if(e.deltaY > 10 && !this.isDown) {
+            console.log('e.deltaY : ' + e.deltaY);
+            if(e.deltaY > 2 && !this.isDown) {
                 this.isDown = true;
                 setTimeout(() => {
                     console.log('timout');
                     this.isDown = false;
                 }, 1000);
                 this.play(this.nav.activeDot + 1);
-            } else if(!this.isDown && e.deltaY < -10) {
+            } else if(!this.isDown && e.deltaY < -2) {
                 this.isDown = true;
                 setTimeout(() => {
                     this.isDown = false;
@@ -165,6 +174,34 @@ class navPanel {
                 this.play(this.nav.activeDot - 1);
             }
         }
+
+        var startY = 0;
+        
+        wrapper.addEventListener('touchstart', function(e){
+            var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+            startY = parseInt(touchobj.clientY); // get x position of touch point relative to left edge of browser
+            console.log('Status: touchstart<br> ClientX: ' + startY + 'px');
+        }, false);
+
+        wrapper.addEventListener('touchend', function(e){
+            var touchobj = e.changedTouches[0]; // reference first touch point for this event
+            console.log('Status: touchend<br> Resting x coordinate: ' + touchobj.clientY + 'px');
+            console.log('Difference: ' + (touchobj.clientY - startY) + 'px');
+            if((touchobj.clientY - startY) > 100 && !panel.isDown) {
+                panel.isDown = true;
+                setTimeout(() => {
+                    console.log('timout');
+                    panel.isDown = false;
+                }, 1000);
+                panel.play(panel.nav.activeDot - 1);
+            } else if(!panel.isDown && (touchobj.clientY - startY) < -100) {
+                panel.isDown = true;
+                setTimeout(() => {
+                    panel.isDown = false;
+                }, 1000);
+                panel.play(panel.nav.activeDot + 1);
+            }
+        }, false);
         
        this.play(0);
     }
@@ -179,3 +216,17 @@ class navPanel {
 }
 
 panel = new navPanel();
+
+var startY = 0;
+ 
+wrapper.addEventListener('touchstart', function(e){
+    var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+    startY = parseInt(touchobj.clientY); // get x position of touch point relative to left edge of browser
+    console.log('Status: touchstart<br> ClientX: ' + startY + 'px');
+}, false);
+
+wrapper.addEventListener('touchend', function(e){
+    var touchobj = e.changedTouches[0]; // reference first touch point for this event
+    console.log('Status: touchend<br> Resting x coordinate: ' + touchobj.clientY + 'px');
+    console.log('Difference: ' + (touchobj.clientY - startY) + 'px');
+}, false);
