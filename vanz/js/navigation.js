@@ -144,6 +144,7 @@ class navPanel {
             this.dotsArray.push(new Dot(item, lines[i], nums[i]));
 
             item.onclick = () => {
+                alert("click");
                 this.play(i);
             }
         });
