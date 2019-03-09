@@ -161,6 +161,10 @@ class myNav {
             location.reload();    
         });
 
+        window.addEventListener("orientationchange", function() {
+            location.reload(); 
+        }, false);
+
         // fix reload position
         window.onload = () => {
             this.dotsAnimation();
