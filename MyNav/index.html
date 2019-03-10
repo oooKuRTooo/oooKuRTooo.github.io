@@ -63,45 +63,47 @@
     </style>
 </head>
 <body>
+    <div class="wrapper">
+        <section class="section"><h1>Section 1</h1></section>
+        <section class="section"><h1>Section 2</h1></section>
+        <section class="section"><h1>Section 3</h1></section>
+        <section class="section"><h1>Section 4</h1></section>
+        <section class="section"><h1>Section 5</h1></section>
+        <section class="section"><h1>Section 6</h1></section>
+        <section class="section"><h1>Section 7</h1></section>
     
-            <section class="section"><h1>Section 1</h1></section>
-            <section class="section"><h1>Section 2</h1></section>
-            <section class="section"><h1>Section 3</h1></section>
-            <section class="section"><h1>Section 4</h1></section>
-            <section class="section"><h1>Section 5</h1></section>
-            <section class="section"><h1>Section 6</h1></section>
-            <section class="section"><h1>Section 7</h1></section>
         
+        <nav>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+            <span class="sec-nav"></span>
+        </nav>
+    </div>
             
-            <nav>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-                <span class="sec-nav"></span>
-            </nav>
-
     <script src="myNav.js"></script>
-            <script>
-                function other(active, disable) {
-                    active.style.transform = 'scale(1.4)';
-                    disable.forEach((item) => {
-                        item.style.transform = 'scale(1)';
-                    });
-                }
+    <script>
+        function other(active, disable) {
+            active.style.transform = 'scale(1.4)';
+            disable.forEach((item) => {
+                item.style.transform = 'scale(1)';
+            });
+        }
 
-                var control = new myNav({
-                    sections: '.section',
-                    dots: '.sec-nav',
-                    activeStyle: 'active',
-                    disableStyle: 'disable',
-                    otherAction: other,
-                    fullMode: false
-                });
+        var control = new myNav({
+            wrapper: '.wrapper',
+            sections: '.section',
+            dots: '.sec-nav',
+            activeStyle: 'active',
+            disableStyle: 'disable',
+            otherAction: other,
+            fullMode: false
+        });
 
-            </script>
+    </script>
     
 </body>
 </html>
