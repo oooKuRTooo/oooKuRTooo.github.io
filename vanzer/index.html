@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vanzer</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts/AvenirNextCyr/stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- main styles -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div id="wrapper">   
+        <!-- head manu -->
+        <header class="header">
+            <!-- logo -->
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="#">
+                </a>
+            </div>
+            <!-- manu btn -->
+            <div class="header__menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+    
+        <!-- head (first) section -->
+        <section class="section sec-head">
+            <!-- svg mask -->
+            <div class="svg svg-one">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <mask id="mask-one">
+                            <rect width="100%" height="100%" fill='white'/>
+                            <text class="svg-one__hole" x="50%" y="90%" fill="black">V</text>
+                        </mask>
+                    </defs>
+                    <text class="svg-one__hole_filter" x="50%" y="90%" fill="black">V</text>
+                    <rect class="svg-one__bgr" width="100%" height="100%" mask="url(#mask-one)"/>
+                </svg>
+            </div>
+            <div class="wrapper sec-head__wrapper">
+                <!-- title -->
+                <div class="sec-header__title">
+                    <h1>vanzer</h1>
+                </div>
+                <!-- description -->
+                <div class="sec-head__description">
+                    <h3>free creative psd template for you</h3>
+                </div>
+                <!-- read more btn -->
+                <div class="sec-head__read-more">
+                    <a href="#">read more</a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- about section -->
+        <section class="section sec-about">
+            <!-- svg mask -->
+            <div class="svg svg-two">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <mask id="mask-two">
+                            <rect width="100%" height="100%" fill='white'/>
+                            <rect x="40%" y="10%" width="400px" height="250px" fill='black'/>
+                            <rect x="50%" y="30%" width="400px" height="250px" fill='black'/>
+                        </mask>
+                    </defs>
+                    <rect class="svg-two__bgr" width="100%" height="100%" mask="url(#mask-two)"/>
+                    <rect class="svg-two__filter" width="100%" height="100%"/>
+                </svg>
+            </div>
+            <div class="wrapper sec-about__wrapper">
+                <!-- title -->
+                <div class="sec-about__title">
+                    <h1><span>creative</span> studio</h1>
+                </div>
+                <!-- description -->
+                <div class="sec-about__describe">
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. 
+                        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis 
+                        vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. 
+                        Maecenas faucibus mollis interdum.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- services section -->
+        <section class="section sec-services">
+            <div class="wrapper sec-services__wrapper">
+                <!-- title -->
+                <div class="sec-services__title">
+                    <h2>services</h2>
+                </div>
+                <!-- tags -->
+                <div class="sec-services__tags">
+                    <a href="#"><h3>industrial design</h3></a>
+                    <a href="#"><h3>web design</h3></a>
+                    <a href="#"><h3>photography</h3></a>
+                </div>
+                <!-- description -->
+                <div class="sec-services__describe">
+                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean 
+                        eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- portfolio section -->
+        <section class="section sec-portfolio">
+            <div class="wrapper sec-portfolio__wrapper">
+                <!-- title -->
+                <div class="sec-portfolio__title">
+                    <h2>portfolio</h2>
+                </div>
+                <!-- gallary -->
+                <div class="gallery">
+                    <div class="gallery__wrapper">
+                        <!-- item -->
+                        <div class="gallery__item">
+                            <img src="img/photo2.png" alt="">
+                        </div>
+                        <!-- item -->
+                        <div class="gallery__item">
+                            <img src="img/photo3.png" alt="">
+                        </div>
+                        <!-- item -->
+                        <div class="gallery__item">
+                            <img src="img/photo1.png" alt="">
+                        </div>
+                    </div>     
+                    <!-- gallary nav -->
+                    <div class="gallery__nav">
+                        <a href="#"><h3>industrial design</h3></a>
+                        <a href="#"><h3>web design</h3></a>
+                        <a href="#"><h3>photography</h3></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- blog section -->
+        <section class="section sec-blog">
+            <div class="wrapper sec-blog__wrapper">
+                <!-- title -->
+                <div class="sec-blog__title">
+                    <h2>recent blog</h2>
+                </div>
+                <!-- blog -->
+                <div class="blog">
+                    <!-- active post -->
+                    <div class="blog__post-img">
+                        <img src="img/photo4.png" alt="#">
+                    </div>
+                    <div class="blog__post blog__post_active">
+                        <h3>Ridiculus Fring
+                                illa Vulputate</h3>
+                        <p>Photography  /  Today  /  by Crophos</p>
+                    </div>
+                    <!-- active post -->
+                    <div class="blog__next-posts">
+                        <div class="blog__post">
+                            <h3>Quam Sit Ridiculus</h3>
+                            <p>Industrial Design  /  Yesterday  /  by John Doe</p>
+                        </div>
+                        <div class="blog__post">
+                            <h3>Ligula Mattis Tellus</h3>
+                            <p>Photography  /  June, 18, 2016  /  by Michael Doe</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    
+        <!-- contacts section -->
+        <section class="section sec-contact">
+            <div class="wrapper sec-contact__wrapper">
+                <!-- title -->
+                <div class="sec-contact__title">
+                    <h2>Contact</h2>
+                </div>
+                <!-- blog -->
+                <div class="sec-contact__describe">
+                    <h4>e-mail</h4>
+                    <p>crophos@gmail.com</p>
+                    <h4>phone</h4>
+                    <p>( 541 ) 754 - 3010</p>
+                    <h4>address</h4>
+                    <p>Crophos Inc. 
+                            76 Camptown Road
+                            Chicago, IL 60710
+                            United States</p>
+                </div>
+            </div>
+        </section>
+
+        <nav class="left-nav">
+            <span class="num">01</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="num">02</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="num">03</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="num">04</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="num">05</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+            <span class="num">06</span>
+            <span class="dot"></span>
+            <span class="line"></span>
+        </nav>
+
+    </div>
+
+    <script src="js/myNav.js"></script>
+    <script src="js/main.js"></script>
+  
+</body>
+</html>

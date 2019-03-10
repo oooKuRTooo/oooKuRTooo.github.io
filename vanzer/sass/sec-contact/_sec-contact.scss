@@ -1,0 +1,37 @@
+.sec-contact {
+}
+
+.sec-contact::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.7);
+    z-index: 0;
+}
+
+.sec-contact__wrapper {
+    @extend %d-flex-col;
+    justify-content: space-around;
+}
+
+.sec-contact__title {
+    color: #fff;
+}
+
+.sec-contact__describe {
+    h4 {
+        color: $gray;
+    }
+
+    p {
+        color: $darkgray;
+    }
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .sec-contact__wrapper {
+        padding: 0 15px;
+    }
+}

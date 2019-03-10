@@ -1,0 +1,52 @@
+.left-nav {
+    @extend %d-flex-col;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    top: 35%;
+    left: 10px;
+    z-index: 1000;
+
+    .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $orange;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .dot-active {
+        background-color: rgba($orange, 1);
+    }
+
+    .dot-disable {
+        background-color: rgba($orange, 0.5);
+    }
+
+    .num {
+        @extend %d-flex-row;
+        color: $orange;
+        font-size: 0px;
+        letter-spacing: 2px;
+        transition: 1s;
+        font-family: $avenir, sans-serif;
+        font-weight: 600;
+    }
+
+    .line {
+        @extend %d-flex-row;
+        width: 3px;
+        height: 0px;
+        background-color: $orange;
+        transition: 1s;
+    }
+
+    .line-active {
+        height: 40px;
+    }
+
+    .num-active {
+        font-size: 21px;
+    }
+}

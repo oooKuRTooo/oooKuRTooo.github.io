@@ -1,0 +1,531 @@
+.left-nav, .sec-contact__wrapper, .blog__post_active, .blog__next-posts, .sec-blog__wrapper, .sec-portfolio__wrapper, .sec-services__wrapper, .sec-about__wrapper, .sec-head__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-nav .line, .left-nav .num, .blog, .gallery__wrapper, .gallery, .header, .section {
+  display: flex;
+  flex-direction: row;
+}
+
+.section {
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1170px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Avenir Next Cyr", sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+
+h2 {
+  font-size: 42px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+  }
+
+  h2 {
+    font-size: 28px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 21px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+  }
+}
+/* Small devices (landscape phones, 576px and up)*/
+/* Medium devices (tablets, 768px and up)*/
+/* Large devices (desktops, 992px and up)*/
+/* Extra large devices (large desktops, 1200px and up)*/
+.header {
+  width: 100%;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: absolute;
+  z-index: 1000;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .header__logo {
+    width: 40px;
+  }
+  .header__logo img {
+    display: block;
+    width: 100%;
+  }
+}
+.sec-head h1 {
+  color: #fff;
+  margin: 0;
+}
+.sec-head h3 {
+  color: #999999;
+  margin-top: 40px;
+}
+
+.sec-head__wrapper {
+  justify-content: center;
+  padding-left: 14.5%;
+}
+
+.header__menu {
+  color: #fff;
+}
+
+.sec-head__read-more {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 3px solid #ff4200;
+  max-width: 240px;
+  width: 100%;
+}
+.sec-head__read-more a {
+  color: #fff;
+  font-family: "Avenir Next Cyr", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sec-about__wrapper {
+  justify-content: center;
+}
+
+.sec-about__title {
+  color: #333333;
+}
+.sec-about__title span {
+  color: #ff4200;
+}
+
+.sec-about__describe {
+  max-width: 420px;
+  width: 100%;
+  margin-left: 8.5%;
+  color: #999999;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .sec-about__wrapper {
+    padding-left: 15px;
+  }
+}
+.sec-services::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.sec-services__wrapper {
+  justify-content: center;
+  padding-left: 8.5%;
+}
+
+.sec-services__title {
+  color: #fff;
+}
+
+.sec-services__tags a {
+  color: #999999;
+}
+.sec-services__tags a:hover {
+  color: #b3b3b3;
+}
+
+.sec-services__describe {
+  max-width: 430px;
+  width: 100%;
+  margin-left: 48%;
+  color: #b3b3b3;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .sec-services__describe {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 0;
+  }
+}
+.sec-portfolio::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.sec-portfolio__wrapper {
+  justify-content: center;
+}
+
+.sec-portfolio__title {
+  color: #fff;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.gallery__wrapper {
+  justify-content: space-between;
+  max-width: 870px;
+  width: 100%;
+}
+
+.gallery__item {
+  max-width: 270px;
+  width: 100%;
+}
+.gallery__item img {
+  display: block;
+  width: 100%;
+}
+
+.gallery__nav {
+  max-width: 200px;
+  width: 100%;
+  margin-left: 8%;
+}
+.gallery__nav a {
+  color: #999999;
+}
+.gallery__nav a:hover {
+  color: #b3b3b3;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .sec-portfolio__wrapper {
+    padding: 0 15px;
+  }
+
+  .gallery {
+    flex-direction: row;
+  }
+
+  .gallery__wrapper {
+    flex-direction: column;
+  }
+
+  .gallery__nav {
+    flex-direction: column;
+  }
+
+  .gallery__item {
+    max-width: 270px;
+    width: 100px;
+    margin-top: 15px;
+  }
+}
+/* Small devices (landscape phones, 576px and up)*/
+/* Medium devices (tablets, 768px and up)*/
+/* Large devices (desktops, 992px and up)*/
+/* Extra large devices (large desktops, 1200px and up)*/
+.sec-blog__wrapper {
+  justify-content: center;
+}
+
+.blog {
+  justify-content: space-between;
+}
+
+.blog__next-posts {
+  height: 100%;
+  justify-content: center;
+}
+
+.blog__post {
+  max-width: 300px;
+  width: 100%;
+}
+
+.blog__post_active {
+  justify-content: center;
+  height: 100%;
+}
+
+.blog__post-img {
+  max-width: 400px;
+  width: 100%;
+}
+.blog__post-img img {
+  display: block;
+  width: 100%;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .sec-blog__wrapper {
+    padding: 0 15px;
+  }
+
+  .blog {
+    flex-direction: column;
+  }
+  .blog h3, .blog p {
+    margin: 0;
+  }
+
+  .blog__post h3, .blog__post p {
+    margin-bottom: 5px;
+  }
+
+  .blog__next-posts {
+    margin-top: 40px;
+  }
+
+  .blog__post_active,
+.blog__next-posts {
+    height: auto;
+  }
+
+  .blog__post-img {
+    max-width: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .blog__post-img img {
+    display: block;
+    width: 100%;
+  }
+}
+.sec-contact::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.sec-contact__wrapper {
+  justify-content: space-around;
+}
+
+.sec-contact__title {
+  color: #fff;
+}
+
+.sec-contact__describe h4 {
+  color: #b3b3b3;
+}
+.sec-contact__describe p {
+  color: #999999;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  .sec-contact__wrapper {
+    padding: 0 15px;
+  }
+}
+.svg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+}
+
+.svg-one .svg-one__bgr {
+  fill: rgba(0, 0, 0, 0.8);
+}
+.svg-one .svg-one__hole {
+  font-size: 800px;
+  font-weight: 700;
+}
+.svg-one .svg-one__hole_filter {
+  font-size: 800px;
+  fill: rgba(255, 66, 0, 0.5);
+  font-weight: 700;
+}
+.svg-one text {
+  font-family: "Avenir Next Cyr", sans-serif;
+  font-weight: 400;
+}
+
+.svg-two .svg-two__bgr {
+  fill: white;
+}
+.svg-two .svg-two__filter {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+.svg-three .svg-three__filter {
+  fill: rgba(0, 0, 0, 0.8);
+}
+
+.svg-four .svg-four__filter {
+  fill: rgba(0, 0, 0, 0.8);
+}
+
+.svg-six .svg-six__filter {
+  fill: rgba(0, 0, 0, 0.8);
+}
+
+.left-nav {
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  top: 35%;
+  left: 10px;
+  z-index: 1000;
+}
+.left-nav .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff4200;
+  margin: 10px;
+  cursor: pointer;
+}
+.left-nav .dot-active {
+  background-color: #ff4200;
+}
+.left-nav .dot-disable {
+  background-color: rgba(255, 66, 0, 0.5);
+}
+.left-nav .num {
+  color: #ff4200;
+  font-size: 0px;
+  letter-spacing: 2px;
+  transition: 1s;
+  font-family: "Avenir Next Cyr", sans-serif;
+  font-weight: 600;
+}
+.left-nav .line {
+  width: 3px;
+  height: 0px;
+  background-color: #ff4200;
+  transition: 1s;
+}
+.left-nav .line-active {
+  height: 40px;
+}
+.left-nav .num-active {
+  font-size: 21px;
+}
+
+.sec-head {
+  background: url(../img/bgr_1.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sec-about {
+  background: url(../img/bgr_5.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sec-portfolio {
+  background: url(../img/bgr_2.jpg) no-repeat;
+  background-size: cover;
+}
+
+.sec-services {
+  background: url(../img/bgr_4.jpg) no-repeat;
+  background-size: cover;
+}
+
+.sec-contact {
+  background: url(../img/bgr_6.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+/*Extra small devices (portrait phones, less than 576px)*/
+/* Small devices (landscape phones, 576px and up)*/
+/* Medium devices (tablets, 768px and up)*/
+/* Large devices (desktops, 992px and up)*/
+/* Extra large devices (large desktops, 1200px and up)*/
+
+/*# sourceMappingURL=main.css.map */

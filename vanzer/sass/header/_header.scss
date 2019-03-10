@@ -1,0 +1,22 @@
+.header {
+    @extend %d-flex-row;
+    width: 100%;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: absolute;
+    z-index: 1000;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .header__logo {
+        width: 40px;
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}

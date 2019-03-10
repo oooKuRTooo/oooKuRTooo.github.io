@@ -1,0 +1,31 @@
+.sec-about {
+    
+}
+
+.sec-about__wrapper {
+    @extend %d-flex-col;
+    justify-content: center;
+}
+
+.sec-about__title {
+    color: $black;
+
+    span {
+        color: $orange;
+    }
+}
+
+.sec-about__describe {
+    max-width: 420px;
+    width: 100%;
+    margin-left: 8.5%;
+
+    color: $darkgray;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .sec-about__wrapper {
+        padding-left: 15px;
+    }
+}

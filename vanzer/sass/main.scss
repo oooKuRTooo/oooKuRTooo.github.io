@@ -1,0 +1,91 @@
+%d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+%d-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.section {
+    @extend %d-flex-row;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 1170px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+@import 'setting';
+@import 'header/header';
+@import 'sec-head/sec-head';
+@import 'sec-about/sec-about';
+@import 'sec-services/sec-services';
+@import 'sec-portfolio/sec-portfolio';
+@import 'sec-blog/sec-blog';
+@import 'sec-contact/sec-contact';
+@import 'svg/svg';
+@import 'left-nav/left-nav';
+
+.sec-head {
+    background: url(../img/bgr_1.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sec-about {
+    background: url(../img/bgr_5.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sec-portfolio {
+    background: url(../img/bgr_2.jpg) no-repeat;
+    background-size: cover;
+    //background-attachment: fixed;
+}
+
+.sec-services {
+    background: url(../img/bgr_4.jpg) no-repeat;
+    background-size: cover;
+    //background-attachment: fixed;
+}
+
+.sec-contact {
+    background: url(../img/bgr_6.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1499.98px) {
+    
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1500px) {
+
+}
