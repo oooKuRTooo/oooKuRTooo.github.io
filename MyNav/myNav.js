@@ -25,6 +25,7 @@ class myNav {
 
         // full mode style
         if (this._fullMode) {
+            document.body.style.overflow = 'hidden';
             this._wrapper.style.width = '100%';
             this._wrapper.style.height = '100vh';
             this._wrapper.style.overflow = 'hidden';
