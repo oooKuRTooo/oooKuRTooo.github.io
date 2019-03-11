@@ -31,6 +31,7 @@ class myNav {
             this._wrapper.style.width = '100%';
             this._wrapper.style.height = '100vh';
             this._wrapper.style.overflow = 'hidden';
+            this._wrapper.style.position = 'fixed';
             this._sections.forEach((section) => {  
                 section.style.height = '100vh';
                 section.style.width = '100%';
