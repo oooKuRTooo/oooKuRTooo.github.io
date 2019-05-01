@@ -1,0 +1,17 @@
+/*=================================================
+    import fonts
+==================================================*/
+
+@font-face {
+    font-family: "Geomanist";
+    src: url(./fonts/Geomanist-Regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Geomanist";
+    src: url(./fonts/Geomanist-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+}

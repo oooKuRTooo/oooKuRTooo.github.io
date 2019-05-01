@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+// for mCustomScrollbar
+html, body{
+    height: 100%;
+}
+
+a,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+%d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+%d-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper {
+    @extend %d-flex-col;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    background-color: rgba(#000000, 0.7);
+}
+
+@import 'header';
+
+.main {
+    @extend %d-flex-col;
+    align-items: center;
+}
+
+.post-head {
+    @extend %d-flex-col;
+    align-items: center;
+    padding-top: 50vh;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.post-head__wrapper {
+    width: 70%;
+}
+
+.post-tag {
+    font-family: 'Avenir Next Cyr';
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+    position: relative;
+    padding-left: 25px;
+}
+
+.post-tag::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 0;
+    background-color: #fff;
+}
+
+.post-title {
+    font-family: 'Avenir Next Cyr';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 46px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.post-time {
+    font-family: 'Avenir Next Cyr';
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-family: 'Avenir Next Cyr';
+    font-size: 18px;
+    color: #fff;
+}
+
+.content {
+    @extend %d-flex-col;
+    align-items: center;
+    font-family: 'Avenir Next Cyr';
+    color: #fff;
+    position: relative;
+
+    p, h3 {
+        width: 70%;
+    }
+
+    img {
+        width: 100%;
+        margin: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    top: -10px;
+    left: 0;
+    background-color: #fff;
+}
+
+.next-post {
+    margin-top: 50px;
+    width: 100%;
+    background-size: 100% 500%;
+    background-position: center;
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.next-post:hover {
+    background-size: 115% 570%;
+}
+
+.next-post:hover .next-post__wrapper {
+    background-color: rgba(#000000, 0.9);
+}
+
+.next-post__wrapper {
+    width: 100%;
+    padding: 40px;
+    background-color: rgba(#000000, 0.8);
+    transition: 1s;
+}
+
+.next-post__tag {
+    font-family: 'Avenir Next Cyr';
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+    position: relative;
+    padding-left: 25px;
+}
+
+.next-post__tag::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 0;
+    background-color: #fff;
+}
+
+.next-post__title {
+    font-family: 'Avenir Next Cyr';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.next-post__time {
+    font-family: 'Avenir Next Cyr';
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.next-post__description {
+    font-family: 'Avenir Next Cyr';
+    font-size: 18px;
+    color: #fff;
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .post-title {
+        font-size: 24px;
+    }
+
+    .post-head {
+        padding-top: 30vh;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

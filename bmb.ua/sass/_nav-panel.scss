@@ -1,0 +1,104 @@
+.nav-panel {
+    @extend %d-flex-col;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    margin: 0 60px;
+    color: #fff;
+}
+
+.nav-panel__ul {
+    @extend %d-flex-col;
+    align-items: flex-end;
+    list-style: none;
+
+    .active {
+        color: #b4a890;
+    }
+
+    .active::after {
+        opacity: 1;;
+    }
+}
+
+.nav-panel__li {
+    position: relative;
+    font-family: 'Avenir Next Cyr';
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.nav-panel__li::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: #b4a890;
+    bottom: 0;
+    left: 2px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.nav-panel__li:hover:after {
+    opacity: 1;
+}
+
+.nav-panel__li:first-child {
+    font-family: 'Avenir Next Cyr';
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.nav-panel__up-btn,
+.nav-panel__down-btn {
+    margin-bottom: 20px;
+}
+
+.nav-panel__up-btn {
+    font-family: 'Avenir Next Cyr';
+    transform: rotate(270deg);
+}
+
+.nav-panel__down-btn {
+    font-family: 'Avenir Next Cyr';
+    transform: rotate(90deg);
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .nav-panel {
+        display: none;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .nav-panel {
+        display: none;
+    }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .nav-panel {
+        display: none;
+    }
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

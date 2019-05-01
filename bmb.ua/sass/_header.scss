@@ -1,0 +1,119 @@
+.header {
+    @extend %d-flex-row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.social {
+    font-family: 'Avenir Next Cyr';
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #fff;
+
+    .social__ul {
+        list-style: none;
+        @extend %d-flex-row;
+        padding-left: 0px;
+    }
+
+    .social__li {
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .social__li:hover {
+        color: #b4a890;
+    }
+}
+
+.social__li:first-child {
+    display: none;
+}
+
+.logo {
+    font-family: 'Avenir Next Cyr';
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.logo:hover {
+    color: #b4a890;
+}
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .header {
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .social {
+        font-size: 10px;
+
+        .social__ul {
+            list-style: none;
+            flex-direction: column;
+        }
+    
+        .social__li {
+            margin-bottom: 20px;
+            transition: 1s;
+        }
+
+        .active {
+            opacity: 1;
+        }
+    }
+
+    .social__li {
+        opacity: 0;
+    }
+
+    .social__li:first-child {
+        display: flex;
+        opacity: 1;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .social {
+        .social__ul {
+            list-style: none;
+            flex-direction: column;
+        }
+    
+        .social__li {
+            margin-bottom: 20px;
+        }
+    }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

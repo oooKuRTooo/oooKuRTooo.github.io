@@ -1,0 +1,143 @@
+/*
+font-family: 'Poiret One', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+%d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+%d-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper {
+    @extend %d-flex-col;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #222;
+    overflow: hidden;
+
+    .wrapper__background {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+        transition: 1s;
+    }
+}
+
+@import 'header';
+@import 'main';
+@import 'nav-panel';
+
+.header,
+.main,
+.main__text {
+   // border: 1px solid red;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(#000, 1), rgba(#000, 0));
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .wrapper {   
+        .wrapper__background {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+    }
+
+    #particles-js {
+        display: none;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .wrapper {   
+        .wrapper__background {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+    }
+
+    #particles-js {
+        display: none;
+    }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .wrapper {   
+        .wrapper__background {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+    }
+
+    #particles-js {
+        display: none;
+    }
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
