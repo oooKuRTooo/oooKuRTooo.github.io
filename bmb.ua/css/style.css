@@ -5,8 +5,6 @@ font-family: 'Open Sans Condensed', sans-serif;
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  box-sizing: border-box;
 }
 
 body * {
@@ -41,6 +39,10 @@ a:hover {
   background-color: #222;
   overflow: hidden;
   position: fixed;
+  /*fix*/
+  height: 100vh;
+  /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
 }
 .wrapper .wrapper__background {
   height: 100%;
