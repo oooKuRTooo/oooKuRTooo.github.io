@@ -18,13 +18,23 @@ background = document.querySelector(".wrapper__background");
 
 
 function changePost() {
-  mainBackgroundBack.setAttribute("style", "background-image: url(img/4.jpg)");
-  mainBackgroundFont.setAttribute("style", "background-image: url(img/1.jpg)");
-  background.setAttribute("style", "background-image: url(img/1.jpg)");
+  mainBackgroundBack.setAttribute("style", "background-image: url(img/12.jpg)");
+  mainBackgroundFont.setAttribute("style", "background-image: url(img/11.jpg)");
+  background.setAttribute("style", "background-image: url(img/11.jpg)");
+  tag.style.opacity = 0;
+  title.style.opacity = 0;
+  time.style.opacity = 0;
+  desc.style.opacity = 0;
   tag.innerHTML = 'video';
   title.innerHTML = 'Більш Менш Шоу';
   time.innerHTML = '<i class="far fa-clock"></i>&nbsp8 хв';
   desc.innerHTML = 'Канарские острова, испанский архипелаг недалеко от северо-западного побережья Африки, – холмистые вулканические острова, известные своими пляжами.';
+  setInterval(() => {
+    tag.style.opacity = 1;
+    title.style.opacity = 1;
+    time.style.opacity = 1;
+    desc.style.opacity = 1;
+  }, 500);
 }
 
 

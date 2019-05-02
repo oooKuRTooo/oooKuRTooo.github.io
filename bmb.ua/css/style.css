@@ -152,6 +152,18 @@ a:hover {
   .social .social__li {
     margin-bottom: 20px;
   }
+  .social .active {
+    opacity: 1;
+  }
+
+  .social__li {
+    opacity: 0;
+  }
+
+  .social__li:first-child {
+    display: flex;
+    opacity: 1;
+  }
 }
 /* Medium devices (tablets, 768px and up)*/
 /* Large devices (desktops, 992px and up)*/
@@ -162,6 +174,7 @@ a:hover {
   width: 55vw;
   height: 35vw;
   position: relative;
+  transition: 1s;
 }
 
 .main__text {
@@ -173,6 +186,7 @@ a:hover {
   z-index: 1000;
   font-family: "Open Sans Condensed", sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 1s;
 }
 
 .main__wrapper {
@@ -186,6 +200,7 @@ a:hover {
   letter-spacing: 2px;
   font-size: 18px;
   margin-bottom: 5px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .main__title {
@@ -194,17 +209,24 @@ a:hover {
   text-transform: uppercase;
   font-size: 24px;
   letter-spacing: 2px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .main__time {
   font-family: "Avenir Next Cyr";
   font-size: 18px;
   margin-bottom: 10px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .main__description {
   font-family: "Avenir Next Cyr";
   font-size: 14px;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .main__rmore-btn {
@@ -253,7 +275,7 @@ a:hover {
 }
 
 .main__background-back:hover + .main__background-font {
-  opacity: 0.6;
+  opacity: 0.4;
   transform: translate(10px, 10px);
 }
 

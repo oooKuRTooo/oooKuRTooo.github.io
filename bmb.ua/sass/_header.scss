@@ -104,6 +104,19 @@
         .social__li {
             margin-bottom: 20px;
         }
+
+        .active {
+            opacity: 1;
+        }
+    }
+
+    .social__li {
+        opacity: 0;
+    }
+
+    .social__li:first-child {
+        display: flex;
+        opacity: 1;
     }
 }
 /* Medium devices (tablets, 768px and up)*/

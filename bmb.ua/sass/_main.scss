@@ -5,6 +5,7 @@
     width: 55vw;
     height: 35vw;
     position: relative;
+    transition: 1s;
 }
 
 .main__text {
@@ -17,6 +18,7 @@
     z-index: 1000;
     font-family: 'Open Sans Condensed', sans-serif;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 1s;
 }
 
 .main__wrapper {
@@ -30,6 +32,7 @@
     letter-spacing: 2px;
     font-size: 18px;
     margin-bottom: 5px;
+    transition: opacity .5s ease-in-out;
 }
 
 .main__title {
@@ -38,17 +41,24 @@
     text-transform: uppercase;
     font-size: 24px;
     letter-spacing: 2px;
+    transition: opacity .5s ease-in-out;
 }
 
 .main__time {
     font-family: 'Avenir Next Cyr';
     font-size: 18px;
     margin-bottom: 10px;
+    transition: opacity .5s ease-in-out;
 }
 
 .main__description {
     font-family: 'Avenir Next Cyr';
     font-size: 14px;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 }
 
 .main__rmore-btn {
@@ -97,7 +107,7 @@
 }
 
 .main__background-back:hover + .main__background-font {
-    opacity: 0.6;
+    opacity: 0.4;
     transform: translate(10px, 10px);
 }
 
