@@ -92,7 +92,8 @@
 .main__background-back {
     width: 70%;
     height: 84%;
-    background-size: 100% 100%;
+    background-size: 177% 100%;
+    background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     left: 0;
@@ -102,7 +103,7 @@
 }
 
 .main__background-back:hover {
-    background-size: 115% 115%;
+    background-size: 204% 115%;
     transform: translate(-10px, -10px);
 }
 

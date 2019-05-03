@@ -15,20 +15,21 @@ desc = document.querySelector(".main__description");
 mainBackgroundBack = document.querySelector(".main__background-back");
 mainBackgroundFont = document.querySelector(".main__background-font");
 background = document.querySelector(".wrapper__background");
+videoBgr = document.querySelector('.video-bgr');
 
 
-function changePost() {
-  mainBackgroundBack.setAttribute("style", "background-image: url(img/12.jpg)");
-  mainBackgroundFont.setAttribute("style", "background-image: url(img/11.jpg)");
-  background.setAttribute("style", "background-image: url(img/11.jpg)");
+function changePost(bgr, bgrBack, bgrFont, tagText, titleText, timeText, descText) {
+  mainBackgroundBack.setAttribute("style", `background-image: url(img/${bgrBack})`);
+  mainBackgroundFont.setAttribute("style", `background-image: url(img/${bgrFont})`);
+  background.setAttribute("style", `background-image: url(img/${bgr})`);
   tag.style.opacity = 0;
   title.style.opacity = 0;
   time.style.opacity = 0;
   desc.style.opacity = 0;
-  tag.innerHTML = 'video';
-  title.innerHTML = 'Більш Менш Шоу';
-  time.innerHTML = '<i class="far fa-clock"></i>&nbsp8 хв';
-  desc.innerHTML = 'Канарские острова, испанский архипелаг недалеко от северо-западного побережья Африки, – холмистые вулканические острова, известные своими пляжами.';
+  tag.innerHTML = tagText;
+  title.innerHTML = titleText;
+  time.innerHTML = timeText;
+  desc.innerHTML = descText;
   setInterval(() => {
     tag.style.opacity = 1;
     title.style.opacity = 1;
@@ -37,20 +38,26 @@ function changePost() {
   }, 500);
 }
 
-
-
-
-
-
-
-
-
-
 navNums = document.querySelectorAll(".nav-panel__li");
 activePage = navNums[1];
 
 navNums[2].addEventListener('click', () => {
-  changePost();
+  changePost('11.jpg', '12.jpg', '11.jpg', 'video', 'Більш Менш Шоу', '8 хв', 'Канарские острова, испанский архипелаг недалеко от северо-западного побережья Африки, – холмистые вулканические острова, известные своими пляжами.');
+  videoBgr.pause();
+  videoBgr.style.opacity = 0;
+});
+
+navNums[3].addEventListener('click', () => {
+  changePost('4.1.jpg', '4.2.jpg', '4.1.jpg', 'travel', 'Більш Менш Шоу', '8 хв', 'Канарские острова, испанский архипелаг недалеко от северо-западного побережья Африки, – холмистые вулканические острова, известные своими пляжами.');
+  videoBgr.pause();
+  videoBgr.style.opacity = 0;
+});
+
+navNums[4].addEventListener('click', () => {
+  changePost('5.1.jpg', '5.2.jpg', '5.1.jpg', 'video', 'Більш Менш Шоу', '8 хв', 'Канарские острова, испанский архипелаг недалеко от северо-западного побережья Африки, – холмистые вулканические острова, известные своими пляжами.');
+  videoBgr.currentTime = 0;
+  videoBgr.play();
+  videoBgr.style.opacity = 1;
 });
 
 

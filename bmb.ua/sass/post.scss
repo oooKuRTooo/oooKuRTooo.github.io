@@ -43,6 +43,10 @@ a:hover {
 
 @import 'header';
 
+.header {
+    position: absolute;
+}
+
 .main {
     @extend %d-flex-col;
     align-items: center;
@@ -51,8 +55,9 @@ a:hover {
 .post-head {
     @extend %d-flex-col;
     align-items: center;
-    padding-top: 50vh;
+    justify-content: flex-end;
     width: 100%;
+    height: 100vh;
     padding-bottom: 80px;
 }
 
@@ -111,6 +116,10 @@ a:hover {
     font-family: 'Avenir Next Cyr';
     color: #fff;
     position: relative;
+    padding-bottom: 50px;
+    padding-top: 40px;
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
     p, h3 {
         width: 70%;
@@ -123,18 +132,7 @@ a:hover {
     }
 }
 
-.content::before {
-    content: '';
-    position: absolute;
-    width: 40%;
-    height: 2px;
-    top: -10px;
-    left: 0;
-    background-color: #fff;
-}
-
 .next-post {
-    margin-top: 50px;
     width: 100%;
     background-size: 100% 500%;
     background-position: center;
@@ -170,16 +168,6 @@ a:hover {
     padding-left: 25px;
 }
 
-.next-post__tag::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    top: calc(50% - 1px);
-    left: 0;
-    background-color: #fff;
-}
-
 .next-post__title {
     font-family: 'Avenir Next Cyr';
     font-weight: bold;
@@ -203,6 +191,26 @@ a:hover {
     color: #fff;
 }
 
+#particles-js-left {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, rgba(#000, 0.5), rgba(#000, 0));
+}
+
+#particles-js-right {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to left, rgba(#000, 0.5), rgba(#000, 0));
+}
+
 /*==================================================
     media queries
 ==================================================*/
@@ -213,22 +221,84 @@ a:hover {
         font-size: 24px;
     }
 
-    .post-head {
-        padding-top: 30vh;
+    .main {
+        @extend %d-flex-col;
+        align-items: center;
+    }
+
+    #particles-js-left {
+        display: none;
+    }
+    
+    #particles-js-right {
+        display: none;
     }
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-
+    #particles-js-left {
+        display: none;
+    }
+    
+    #particles-js-right {
+        display: none;
+    }
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+    #particles-js-left {
+        display: none;
+    }
+    
+    #particles-js-right {
+        display: none;
+    }
 }
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
 }
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
+
+/* large devices+ (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+    .post-head__wrapper {
+        width: 50%;
+    }
+
+    .content {   
+        p, h3 {
+            width: 50%;
+        }
+    }
+}
+
+/* Extra large devices (large desktops, 1600px and up)*/
+@media (min-width: 1600px) {
+    .post-head__wrapper {
+        width: 50%;
+    }
+
+    .content {   
+        p, h3 {
+            width: 50%;
+        }
+    }
+
+    .post-tag {
+        letter-spacing: 2px;
+        font-size: 26px;
+    }
+    
+    .post-title {
+        font-size: 64px;
+        letter-spacing: 2px;
+    }
+    
+    .post-time {
+        font-size: 24px;
+    }
+    
+    .post-description {
+        font-size: 24px;
+    }
 }
