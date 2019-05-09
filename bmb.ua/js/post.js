@@ -8,232 +8,101 @@ socials[0].addEventListener('click', () => {
   }
 });
 
-particlesJS('particles-js-left',
+function test() {
+  console.log(document.querySelector(".gallery-carusel").getBoundingClientRect().top);
+  console.log(document.body.clientHeight);
   
-{
-    "particles": {
-      "number": {
-        "value": 10,
-        "density": {
-          "enable": false,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 30,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 2,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "onclick": {
-          "enable": false,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 400,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 100,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": false
+}
+
+vh = document.body.clientHeight;
+carusel = document.querySelector(".gallery-carusel");
+caruselUl = document.querySelector(".gallery-carusel ul");
+leftPadding = 0;
+
+leftPadding = 0;
+
+carusel.addEventListener('wheel', (e) => {
+  $("body").mCustomScrollbar("stop");
+  $("body").mCustomScrollbar("disable");
+  document.body.onwheel = () => {
+    $("body").mCustomScrollbar("update");
   }
-
-);
-
-particlesJS('particles-js-right',
-  
-{
-    "particles": {
-      "number": {
-        "value": 10,
-        "density": {
-          "enable": false,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 10,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 2,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "onclick": {
-          "enable": false,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 400,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 100,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": false
+  if (e.deltaY > 0 && leftPadding < caruselUl.scrollWidth) {
+    leftPadding += 200;
+    caruselUl.setAttribute("style", `left: calc(25% - ${leftPadding}px)`);
+  } else if (e.deltaY < 0 && leftPadding > 0) {
+    leftPadding -= 200;
+    caruselUl.setAttribute("style", `left: calc(25% - ${leftPadding}px)`);
   }
+});
 
-);
+content = document.querySelectorAll(".content *");
+itemsOffset = [];
+
+
+for (let index = 0; index < content.length; index++) {
+  itemsOffset[index] = content[index].getBoundingClientRect().top;
+  console.log(itemsOffset[index]);
+}
+
+for (let index = 0; index < content.length; index++) {
+  content[index].classList.add('beforeAnim');
+}
+
+
+(function($){
+  $(window).load(function(){
+      $("body").mCustomScrollbar({
+        theme:"dark-thin",
+        scrollInertia: 2000,
+        timeout: 1000,
+        mouseWheel:{ scrollAmount: 300 },
+        callbacks:{
+          whileScrolling:function(){
+            console.log(this.mcs.top);
+            for (let index = 0; index < itemsOffset.length; index++) {
+              if (Math.abs(this.mcs.top) > itemsOffset[index] - vh + 200) {
+                console.log('sf');
+                content[index].classList.remove('beforeAnim');
+                content[index].classList.add('anim');
+              }
+            } 
+          }
+        }
+      });
+  });
+})(jQuery);
+
+
+// add smartphones touch scroll event
+// touchstart x coord
+let startX = 0;
+
+// if touch start, save y coord to startY
+carusel.addEventListener('touchstart', function(e){
+
+    // reference first touch point (ie: first finger)
+    var touchobj = e.changedTouches[0];
+
+    // get x position of touch point relative to left edge of browser
+    startX = parseInt(touchobj.clientX);
+}, false);
+
+// if touch end, counting difference and go up or down
+carusel.addEventListener('touchend', (e) => {
+    // reference first touch point for this event
+    var touchobj = e.changedTouches[0];
+    if(touchobj.clientX - startX > 100) {
+      if (leftPadding > 0) {
+        leftPadding -= 200;
+        caruselUl.setAttribute("style", `left: calc(25% - ${leftPadding}px)`);
+      }
+    } else if(touchobj.clientX - startX < -100) {
+
+      if (leftPadding < caruselUl.scrollWidth) {
+        leftPadding += 200;
+        caruselUl.setAttribute("style", `left: calc(25% - ${leftPadding}px)`);
+      }
+    }
+}, false);
+
