@@ -23,7 +23,7 @@ a:hover {
   flex-direction: column;
 }
 
-.content .gallery-carusel ul, .social .social__ul, .header {
+.full-image, .content .caruselNew li, .content .caruselNew ul, .content .gallery-carusel ul, .social .social__ul, .header {
   display: flex;
   flex-direction: row;
 }
@@ -282,6 +282,66 @@ a:hover {
   height: 500px;
   flex-shrink: 0;
 }
+.content .caruselNew {
+  overflow-x: hidden;
+  width: 100vw;
+}
+.content .caruselNew ul {
+  align-items: center;
+  list-style: none;
+  width: 85%;
+  margin: 0;
+  padding: 0;
+  transition: 1s;
+  padding-left: 25%;
+}
+.content .caruselNew li {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  height: 300px;
+  padding-right: 10px;
+  transition: 1s;
+  position: relative;
+}
+.content .caruselNew li img {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+  opacity: 0.6;
+}
+.content .caruselNew li .full-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 1s;
+  cursor: pointer;
+}
+.content .caruselNew li .full-btn i {
+  margin: auto auto;
+  color: #fff;
+}
+.content .caruselNew li .full-btn:hover {
+  opacity: 1;
+}
+.content .caruselNew li .active {
+  max-width: 500px;
+  opacity: 1;
+  position: relative;
+}
+.content .caruselNew li .active:hover + .full-btn {
+  opacity: 1;
+}
 .content .anim {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -362,6 +422,42 @@ a:hover {
   color: #fff;
 }
 
+.full-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: -1;
+  justify-content: center;
+  align-items: center;
+}
+.full-image img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.full-image .full-image__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.full-image .full-image__close i {
+  margin: auto auto;
+  color: #fff;
+}
+
+.full-image_active {
+  opacity: 1;
+  z-index: 2000;
+}
+
 /*==================================================
     media queries
 ==================================================*/
@@ -388,6 +484,18 @@ a:hover {
   .content .gallery-carusel li {
     width: 300px;
     height: 200px;
+  }
+  .content .caruselNew ul {
+    padding-left: 15%;
+  }
+  .content .caruselNew li {
+    height: 100px;
+  }
+  .content .caruselNew li img {
+    max-width: 100px;
+  }
+  .content .caruselNew li .active {
+    max-width: 200px;
   }
 
   .next-post {
@@ -416,8 +524,92 @@ a:hover {
   }
 }
 /* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .content .panorama {
+    width: 100%;
+    height: 200px;
+  }
+  .content .gallery-carusel {
+    height: 200px;
+  }
+  .content .gallery-carusel ul {
+    left: 10px;
+  }
+  .content .gallery-carusel li {
+    width: 300px;
+    height: 200px;
+  }
+  .content .caruselNew ul {
+    padding-left: 15%;
+  }
+  .content .caruselNew li {
+    height: 100px;
+  }
+  .content .caruselNew li img {
+    max-width: 100px;
+  }
+  .content .caruselNew li .active {
+    max-width: 200px;
+  }
+}
 /* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .content .panorama {
+    width: 100%;
+    height: 200px;
+  }
+  .content .gallery-carusel {
+    height: 200px;
+  }
+  .content .gallery-carusel ul {
+    left: 10px;
+  }
+  .content .gallery-carusel li {
+    width: 300px;
+    height: 200px;
+  }
+  .content .caruselNew ul {
+    padding-left: 15%;
+  }
+  .content .caruselNew li {
+    height: 100px;
+  }
+  .content .caruselNew li img {
+    max-width: 100px;
+  }
+  .content .caruselNew li .active {
+    max-width: 200px;
+  }
+}
 /* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .content .panorama {
+    width: 100%;
+    height: 200px;
+  }
+  .content .gallery-carusel {
+    height: 200px;
+  }
+  .content .gallery-carusel ul {
+    left: 10px;
+  }
+  .content .gallery-carusel li {
+    width: 300px;
+    height: 200px;
+  }
+  .content .caruselNew ul {
+    padding-left: 15%;
+  }
+  .content .caruselNew li {
+    height: 100px;
+  }
+  .content .caruselNew li img {
+    max-width: 100px;
+  }
+  .content .caruselNew li .active {
+    max-width: 200px;
+  }
+}
 /* large devices+ (large desktops, 1200px and up)*/
 @media (min-width: 1200px) and (max-width: 1599.98px) {
   .content p, .content h3 {
