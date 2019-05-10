@@ -430,6 +430,8 @@ a:hover {
   height: 100vh;
   background-color: #000;
   z-index: -1;
+  transition: 0.5s;
+  opacity: 0;
   justify-content: center;
   align-items: center;
 }
