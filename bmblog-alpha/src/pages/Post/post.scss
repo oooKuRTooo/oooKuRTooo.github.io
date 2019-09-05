@@ -1,0 +1,357 @@
+.post {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+
+    .particles {
+        position: fixed;
+        top: 0;
+        height: 100%;
+    }
+
+    div[class^="layer-"] > * {
+        opacity: 0;
+    }
+
+    .read-line {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background-color: black;
+        z-index: 2000;
+    }
+
+    .header {
+        background-color: transparent;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 5vw;
+        padding-top: 2.8vw;
+        color: #fff;
+        z-index: 101;
+
+        .logo {
+            font-family: 'Avenir Next Cyr';
+            font-weight: 300;
+            font-size: 26px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+
+            a,
+            a:hover,
+            a:active {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .head {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 101);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 100;
+        transform: translate3d(0, 0, 0);
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        * {
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .tag,
+        .title {
+            position: relative;
+            z-index: 3;
+            z-index: 3;
+        }
+
+        .tag.active,
+        .title.active {
+            animation-name: contentAppear;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+    }
+
+    .content {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .disable {
+        opacity: 0;
+    }
+
+    .visible {
+        animation-name: contentAppear;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .layer-1 {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+    
+    .layer-2 {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+    }
+    
+    .layer-base {
+        position: relative;
+        z-index: 1000;
+        transform: translate3d(0,0,0);
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    
+    .content {
+        position: relative;
+        z-index: 5;
+    }
+    
+    .active {
+        z-index: 100;
+    }
+    
+    .disable {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+
+    @keyframes contentAppear {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.paragraph {
+
+
+    &.initial p::first-letter {
+        font-size: 34px;
+    }
+
+    p {
+        width: 100%;
+    }
+}
+
+.image {
+    margin: 50px 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.panorama {
+    margin: 50px 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        
+    }
+}
+
+.main-layer {
+    position: relative;
+    z-index: 1000;
+}
+
+.p {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+}
+
+.next-post {
+    margin-top: 20px;
+    padding: 40px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    min-height: 200px;
+    cursor: pointer;
+    position: relative;
+    z-index: 6;
+    background-size: 100%;
+    background-position: center;
+    transition: background-size 0.5s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.7;
+        z-index: -1;
+        left: 0;
+        top: 0;
+    }
+
+    &:hover::after {
+        transition: 0.5s;
+        opacity: 0.4;
+    }
+
+    &:hover {
+        background-size: 110%;
+    }
+
+    .title {
+        font-family: 'Avenir Next Cyr';
+        font-weight: 500;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    
+    .category {
+        font-family: 'Avenir Next Cyr';
+        font-weight: 300;
+        font-size: 18px;
+        color: #fff;
+    }
+}
+
+.post-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+    z-index: 1000;
+
+    > * {
+        margin: 10px;
+    }
+}
+
+
+@keyframes box {
+    from { 
+        stroke-dasharray: 326.7;
+        stroke-dashoffset: 326.7;
+    }
+    to { left: 300px; }
+   }
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .post {
+        .header {
+            padding: 0 8vw;
+            padding-top: 6vw;
+        }
+        
+        .head {
+    
+            * {
+                color: #fff;
+            }
+    
+            h1 {
+                font-size: 24px;
+                font-weight: 800;
+            }
+
+            h3 {
+                font-size: 18;
+            }
+        }
+    }
+
+    .container {
+        padding: 0 10%;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        padding: 0 10%;
+    }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        padding: 0 15%;
+    }
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        padding: 0 20%;
+    }
+}
+/* large devices+ (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+    .container {
+        padding: 0 27.5%;
+    }
+}
+/* Extra large devices (large desktops, 1600px and up)*/
+@media (min-width: 1600px) {
+    .container {
+        padding: 0 30%;
+    }
+}

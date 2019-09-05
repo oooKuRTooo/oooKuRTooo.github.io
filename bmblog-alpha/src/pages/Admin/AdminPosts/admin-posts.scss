@@ -1,0 +1,12 @@
+.posts-list {
+    display: flex;
+    flex-direction: column;
+
+    .btns {
+        margin-bottom: 20px;
+
+        & > * {
+            margin-right: 10px;
+        }
+    }
+}

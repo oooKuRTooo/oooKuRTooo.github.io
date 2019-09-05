@@ -1,0 +1,55 @@
+@import '../node_modules/antd/dist/antd.min.css';
+@import './media/fontAvenir/stylesheet.css';
+
+h1 { font-size: 2em; margin: .67em 0 };
+h2 { font-size: 1.5em; margin: .75em 0 };
+h3 { font-size: 1.17em; margin: .83em 0 };
+h4 { margin: 1.12em 0 };
+h5 { font-size: .83em; margin: 1.5em 0 };
+h6 { font-size: .75em; margin: 1.67em 0 };
+
+body {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    background-color: #222;
+
+    #root {
+        height: calc(var(--vh, 1vh) * 100);
+        width: 100vw;
+    }
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    .test-item {
+        max-width: 90vw;
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* large devices+ (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+
+}
+
+/* Extra large devices (large desktops, 1600px and up)*/
+@media (min-width: 1600px) {
+
+}

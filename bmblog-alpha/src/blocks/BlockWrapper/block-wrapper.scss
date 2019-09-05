@@ -1,0 +1,37 @@
+.block-wr-item{
+
+    i {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+.block-wrapper {
+    box-sizing: border-box;
+
+    // &.edit { outline: 1px dashed transparent; outline-offset: -4px; }
+    // &.edit:hover { outline: 1px dashed #03A9F4; outline-offset: -4px; }
+
+    // &.edit .block-wr-item { outline: 1px dashed transparent; outline-offset: -4px; }
+    // &.edit:hover .block-wr-item { outline: 1px dashed #03A9F4; outline-offset: -4px; }
+
+    // &.edit-active { outline: 1px dashed #03A9F4; pointer-events: none; outline-offset: -4px; }
+    // &.edit-active .block-wr-item { outline: 1px dashed #03A9F4; pointer-events: none; outline-offset: -4px; }
+}
+
+.blockwr-settings {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+
+}

@@ -1,0 +1,180 @@
+.text-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+
+    & .text-block {
+        width: 50%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+
+    &.edit:hover {
+        outline: 1px dashed #03A9F4;
+        outline-offset: -1px;
+    }
+
+    &.edit:hover .trumbowyg-dark {
+        outline: 1px dashed #03A9F4;
+        outline-offset: -1px;
+    }
+
+    &.justify-center {
+        align-items: center;
+    }
+
+    &.justify-left {
+        align-items: flex-start;
+        padding-left: 40px;
+    }
+
+    &.justify-right{
+        align-items: flex-end;
+        padding-right: 40px;
+    }
+
+    &.justify-full .text-block,
+    &.justify-full .trumbowyg-dark{
+        width: 100% !important;
+    }
+
+    .block-settings-btn {
+        position: absolute;
+        right: 50px;
+        opacity: 0;
+    }
+
+    .block-delete-btn {
+        position: absolute;
+        right: 70px;
+        opacity: 0;
+    }
+
+    &:hover .block-delete-btn {
+        opacity: 0.7;
+    }
+
+    &:hover .block-settings-btn {
+        opacity: 0.7;
+    }
+}
+
+.trumbowyg-dropdown-emoji > * {
+    width: auto !important;
+}
+
+.trumbowyg-fontfamily-button {
+    color: #fff
+}
+
+.trumbowyg-button-pane {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    display: none;
+    left: 25%;
+}
+
+.text-wrapper.focus .trumbowyg-button-pane {
+    display: block;
+}
+
+.trumbowyg-editor {
+    padding: 0;
+    min-height: auto !important;
+    height: auto !important;
+    cursor: text;
+    background-color: transparent;
+}
+
+.trumbowyg-box {
+    margin: 0;
+    min-height: auto;
+    background-color: transparent;
+}
+
+.trumbowyg-dark .trumbowyg-box {
+    border: none;
+}
+
+.block-wrapper {
+    .trumbowyg-button-pane {
+        position: fixed;
+        bottom: -50px;
+        width: 100%;
+        display: none;
+        left: 0;
+    }
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+    .text-wrapper .text-block {
+        width: 90%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .text-wrapper .text-block {
+        width: 80%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .text-wrapper .text-block {
+        width: 70%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .text-wrapper .text-block {
+        width: 60%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}
+/* large devices+ (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+    .text-wrapper .text-block {
+        width: 50%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}
+/* Extra large devices (large desktops, 1600px and up)*/
+@media (min-width: 1600px) {
+    .text-wrapper .text-block {
+        width: 40%;
+
+        p {
+            padding: 20px 0;
+        }
+    }
+}

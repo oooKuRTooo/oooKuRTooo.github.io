@@ -1,0 +1,156 @@
+.home .header {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    padding-top: 2.8vw;
+    color: #fff;
+    z-index: 10;
+
+    .nav {
+
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            li:first-child {
+                display: none;
+            }
+
+            li {
+                margin-right: 2vw;
+                font-family: 'Avenir Next Cyr';
+                font-weight: 300;
+                font-size: 16px;
+                text-transform: uppercase;
+                position: relative;
+                cursor: pointer;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #b4a88f;
+                    }
+
+                    &:after {
+                        display: block;
+                        content: "";
+                        background-color: #fff;
+                        height: 1px;
+                        width: 0%;
+                        left: 50%;
+                        bottom: -5px;
+                        position: absolute;
+                        -webkit-transition: width .3s ease-in-out;
+                        -moz--transition: width .3s ease-in-out;
+                        transition: width .3s ease-in-out;
+                        -webkit-transform: translateX(-50%);
+                        -moz-transform: translateX(-50%);
+                        transform: translateX(-50%);
+                    }
+                
+                    &:hover:after,
+                    &:focus:after {
+                        width: 100%;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .logo {
+        font-family: 'Avenir Next Cyr';
+        font-weight: 300;
+        font-size: 26px;
+        cursor: pointer;
+        transition: opacity 0.5s;
+
+        a,
+        a:hover,
+        a:active {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+/*==================================================
+    media queries
+==================================================*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+    .home .header {
+        align-items: baseline;
+        padding: 0 8vw;
+        padding-top: 6vw;
+
+        .nav {
+
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin-bottom: 10px;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    font-size: 12px;
+                }
+
+                li:first-child{
+                    display: inline;
+                    opacity: 1; 
+                }
+
+                li:not(:first-child) {
+                    touch-action: none;
+                }
+
+                li.active { 
+                    opacity: 1;
+                }
+            }
+        }
+
+        .logo {
+            font-size: 18px;
+        }
+    }
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* large devices+ (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+
+}
+
+/* Extra large devices (large desktops, 1600px and up)*/
+@media (min-width: 1600px) {
+
+}
