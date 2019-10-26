@@ -2,7 +2,7 @@ const initialState = {
   isAuth: false,
   name: '',
   password: '',
-  token: ''
+  token: 'b5cf190a6cf70667989fe5fd2fd428'
 }
 
 export default function(state = initialState, action) {

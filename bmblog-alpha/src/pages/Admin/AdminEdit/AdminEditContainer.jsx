@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import AdminEdit from './AdminEdit';
 import { addCollectionItem } from '../../../plugins/cockpitRequests';
 import { CMS_URL, QUEST_TOKEN } from '../../../constants';
+import { updatePosts } from '../../../store/global/actions'
 
 
 class AdminEditContainer extends Component {
@@ -24,12 +25,12 @@ class AdminEditContainer extends Component {
         this.setState({ isReady: true });
     }
 
-    savePost = data => {
-        addCollectionItem(CMS_URL, QUEST_TOKEN, 'posts', data);
+    savePost = (data, callback) => {
+        addCollectionItem(CMS_URL, this.props.token, 'posts', data).then(callback || null);
     }
 
     updatePost = slug => {
-        this.props.history.push(`/admin/edit/${slug}`);
+        this.props.updatePosts(()=>this.props.history.push(`/admin/edit/${slug}`));
     }
 
     render() {
@@ -37,7 +38,7 @@ class AdminEditContainer extends Component {
 
         return (
             <Fragment>
-                { isReady ? <AdminEdit data={post} savePost={this.savePost} updatePost={this.updatePost} /> : null}
+                { isReady && this.props.isAuth ? <AdminEdit data={post} savePost={this.savePost} updatePost={this.updatePost} /> : null}
             </Fragment>
         );
     }
@@ -45,12 +46,16 @@ class AdminEditContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.global.posts
+        posts: state.global.posts,
+        isAuth: state.admin.isAuth,
+        token: state.admin.token
     }
 }
 
 const mapDispatchToProps = (dispath) => {
-    return {}
+    return {
+        updatePosts: bindActionCreators(updatePosts, dispath)
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminEditContainer);

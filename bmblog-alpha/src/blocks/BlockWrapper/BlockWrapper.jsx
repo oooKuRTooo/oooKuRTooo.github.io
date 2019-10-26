@@ -20,11 +20,12 @@ function TestItem(props) {
     const onCancel = () => {
         setVisible(false);
         grid.updateLayout();
-    };
+    }
 
     return (
         <div className="block-wr-item" style={style}>
-            {blockParser({...block, isEditMode})}
+            {block && blockParser({...block, isEditMode})}
+            {!block && <div>Empty</div>}
             {isEditMode &&
                 <>
                     <Icon onClick={()=>setVisible(true)} type="plus-circle" />
@@ -42,7 +43,7 @@ function TestItem(props) {
     );
 }
 
-export default class BlockWrapper extends React.Component {
+class BlockWrapper extends React.Component {
 
     static getInfo() {
         return {
@@ -74,16 +75,14 @@ export default class BlockWrapper extends React.Component {
     gridRef = {};
 
     componentDidMount = () => {
-        this.setState({
+        if (!this.props.data) this.setState({
             settingsVisible: true
         });
+        window.addEventListener("resize", this.gridRef.updateLayout || null, false);
+        this.state.items.forEach(item => {
+            item.block && (item.block.save = this.saveBlock);
+        });
     }
-
-    componentDidUpdate = () => {
-        console.log('didupdate!');
-        this.gridRef.updateLayout && this.gridRef.updateLayout();
-    }
-
     
     addBlock = (index, blockName) => {
 
@@ -158,6 +157,15 @@ export default class BlockWrapper extends React.Component {
         this.setState({ items });
     }
 
+    getDefaultWidth = () => {
+        if (window.matchMedia("(min-width: 1600px)").matches) return 50;
+        if (window.matchMedia("(min-width: 1200px)").matches) return 50;
+        if (window.matchMedia("(min-width: 992px)").matches) return 60;
+        if (window.matchMedia("(min-width: 768px)").matches) return 70;
+        if (window.matchMedia("(min-width: 576px)").matches) return 80;
+        if (window.matchMedia("(max-width: 575.98px)").matches) return 85;
+    }
+
     render() {
         this.gridRef.updateLayout && this.gridRef.updateLayout();
         const { items, settings, settingsVisible } = this.state;
@@ -171,17 +179,27 @@ export default class BlockWrapper extends React.Component {
             visible: settingsVisible,
             save: this.saveSettings,
             close: this.closeSettings,
-            setColCount: this.setColCount
+            setColCount: this.setColCount,
+            data: {
+                ...settings,
+                colCount: itemList.length
+            }
         }
 
         const stackGridProps = {
-            columnWidth: settings.columnWidth || 600,
+            columnWidth: window.matchMedia("(max-width: 500px)").matches ? '100%' : ((settings.columnWidth && `${(100 / settings.columnWidth).toFixed(2)}%`) || '50%'),
             gutterWidth: settings.gutterWidth || 0,
             gutterHeight: settings.gutterHeight || 0,
+            style: {
+                width: `${this.getDefaultWidth() + (settings.widthOffset || 0)}%`
+            }
         }
 
         const wrapperProps = {
-            className: `block-wrapper ${isEditMode ? 'edit': null} ${settingsVisible ? 'edit-active': null}`
+            className: `block-wrapper ${isEditMode ? 'edit': null} ${settingsVisible ? 'edit-active': null}`,
+            style: {
+                padding: (settings.padding && `${settings.padding}vh 0`) || '5vh 0',
+            }
         }
 
         const readMode = () => {
@@ -190,6 +208,7 @@ export default class BlockWrapper extends React.Component {
                     <StackGrid
                         {...stackGridProps}
                         gridRef={grid => this.gridRef = grid}
+                        className='stack-grid'
                     >
                         {itemList}
                     </StackGrid>
@@ -203,6 +222,7 @@ export default class BlockWrapper extends React.Component {
                     <StackGrid
                         {...stackGridProps}
                         gridRef={grid => this.gridRef = grid}
+                        className='stack-grid'
                     >
                         {itemList}
                     </StackGrid>
@@ -220,3 +240,5 @@ export default class BlockWrapper extends React.Component {
         );
     }
 }
+
+export default BlockWrapper;

@@ -7,13 +7,17 @@ import { auth } from '../../store/admin/actions';
 
 class AdminContainer extends Component {
 
+    goToPage = (rout) => {
+        this.props.history.push(rout);
+    }
+
     render() {
 
         const { auth, admin: { isAuth }, page } = this.props;
 
         return (
             <Fragment>
-                { isAuth ? <Admin page={page} /> : <Auth authorize={auth}/>}
+                { isAuth ? <Admin page={page} goToPage={this.goToPage} /> : <Auth authorize={auth}/>}
             </Fragment>
         );
     }

@@ -3,10 +3,9 @@ import { Menu, Dropdown, Button, Icon, Drawer, Input, Switch, Slider, Radio, Inp
 
 export default function(props) {
 
-    const { visible, close, save, setColCount } = props;
+    const { visible, close, save, setColCount, data } = props;
 
     const widthChange = e => {
-        console.log(e);
         save({
             columnWidth: e
         });
@@ -23,6 +22,18 @@ export default function(props) {
     const colCountChange = e => {
         setColCount(e);
     }
+
+    const paddingChange = e => {
+        save({
+            padding: e
+        })
+    }
+
+    const widthOffsetChange = e => {
+        save({
+            widthOffset: e
+        })
+    }
     
     return (
         <Drawer
@@ -34,19 +45,19 @@ export default function(props) {
         >
             <div className="blockwr-settings">
                 <div className="blockwr-settings-input">
-                    <Icon type="column-width" />
+                    <Icon type="ellipsis" />
                     <InputNumber
-                        defaultValue={600}
+                        defaultValue={data.columnWidth || 2}
                         min={0}
-                        max={1000}
-                        step={100}
+                        max={6}
+                        step={1}
                         onChange={widthChange}
                     />
                 </div>
                 <div className="blockwr-settings-input">
                     <Icon type="border-horizontal" />
                     <InputNumber
-                        defaultValue={0}
+                        defaultValue={data.gutterHeight || 0}
                         min={0}
                         max={100}
                         step={10}
@@ -56,11 +67,31 @@ export default function(props) {
                 <div className="blockwr-settings-input">
                     <Icon type="diff" />
                     <InputNumber
-                        defaultValue={0}
+                        defaultValue={data.colCount || 2}
                         min={2}
                         max={6}
                         step={1}
                         onChange={colCountChange}
+                    />
+                </div>
+                <div className="blockwr-settings-input">
+                    <Icon type="vertical-align-top" />
+                    <InputNumber
+                        defaultValue={data.padding || 5}
+                        min={0}
+                        max={100}
+                        step={1}
+                        onChange={paddingChange}
+                    />
+                </div>
+                <div className="blockwr-settings-input">
+                    <Icon type="column-width" />
+                    <InputNumber
+                        defaultValue={data.widthOffset || 0}
+                        min={-10}
+                        max={10}
+                        step={1}
+                        onChange={widthOffsetChange}
                     />
                 </div>
             </div>

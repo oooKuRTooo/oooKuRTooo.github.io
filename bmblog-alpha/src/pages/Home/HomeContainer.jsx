@@ -9,11 +9,15 @@ class HomeContainer extends Component {
 
         const { posts, style, settings } = this.props;
 
-        console.log(posts);
+        const homeProps = {
+            data: posts.filter(post=>post.isPublished),
+            style,
+            settings
+        }
 
         return (
             <Fragment>
-                {posts.length > 0 ? <Home data={posts} settings={settings} style={style}/> : <h2>Потрібні Пости!!!</h2>}
+                {posts.length > 0 ? <Home {...homeProps}/> : <h2>Потрібні Пости!!!</h2>}
             </Fragment>
         );
     }

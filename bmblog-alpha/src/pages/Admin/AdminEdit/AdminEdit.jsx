@@ -22,12 +22,12 @@ const reorder = (list, startIndex, endIndex) => {
 export default class EditPost extends Component {
 
     state = (this.props.data && {...this.props.data, activeLayer: 2}) || {
-        title: 'NewPost',
-        category: 'lala',
+        title: 'Title',
+        category: '',
         tags: [],
-        slug: 'new-post',
-        preview: { path: ''},
-        backview: { path: ''},
+        slug: '',
+        preview: { path: '', fullPath: '' },
+        backview: { path: '', fullPath: '' },
         comments: null,
         layers: [
             { items: [], settings: { opacity: 1 , speed: 0 } },
@@ -100,7 +100,7 @@ export default class EditPost extends Component {
             if (item.id === id) index = i;
         });
 
-        const tempData = {...tempActiveLayer.items[index], data: newData};
+        const tempData = {...tempActiveLayer.items[index], data: {...tempActiveLayer.items[index].data, ...newData}};
         tempActiveLayer.items.splice(index, 1, tempData);
 
         this.setState({
@@ -110,8 +110,9 @@ export default class EditPost extends Component {
 
     save = () => {
         const slug = convertToLatin(this.state.title).replace(/ /ig, '-').toLowerCase();
-        this.props.savePost({...this.state, slug});
-        this.props.updatePost(slug);
+        this.props.savePost({...this.state, slug}, ()=>{
+            this.props.updatePost(slug);
+        });
     }
 
     removeBlock = id => {

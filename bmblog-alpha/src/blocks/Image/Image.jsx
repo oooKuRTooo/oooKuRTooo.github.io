@@ -9,10 +9,11 @@ export default class Image extends Component {
         initData: (this.props.data && this.props.data.text) || null,
         wrapperSettingsVisible: false,
         settings: {
-            justifyClass:  (this.props.data && this.props.data.settings.justifyClass) || 'center',
+            justifyClass:  (this.props.data && this.props.data.settings.justifyClass) || 'justify-center',
             imgWidthClass: (this.props.data && this.props.data.settings.imgWidthClass) || 'default-width',
             asset: (this.props.data && this.props.data.settings.asset) || { path: '', fullPath: '' },
-            paddingTop: (this.props.data && this.props.data.settings.paddingTop) || '0',
+            padding: this.props.data !== null ? this.props.data.settings.padding : 5,
+            height: (this.props.data && this.props.data.settings.height) || 'auto',
         }
     }
 
@@ -27,6 +28,9 @@ export default class Image extends Component {
         this.setState({
             settings: {...this.state.settings, ...settings}
         });
+        console.log('adaaada');
+        console.log({...this.state.settings, ...settings});
+
     }
 
     onSave = () => {
@@ -38,13 +42,21 @@ export default class Image extends Component {
 
     render() {
 
-        console.log(this.props);
-
         const { settings } = this.state;
+
+        console.log(settings);
 
         const wrapperClass = `image-wrapper ${this.props.isEditMode ? 'edit' : ''} ${this.state.settings.justifyClass}`;
         const wrapperStyle = {
-            paddingTop: `${this.state.settings.paddingTop}vh`
+            padding: (`${settings.padding}vh 0`)
+        }
+
+        const settingsProps = {
+            data: {...this.state.settings},
+            save: this.saveSettings,
+            onSave: this.onSave,
+            visible: this.state.wrapperSettingsVisible,
+            close: ()=>{this.setState({ wrapperSettingsVisible: false})}
         }
 
         const imgProps = {
@@ -73,7 +85,7 @@ export default class Image extends Component {
                     { this.state.settings.asset.path ? <img {...imgProps}/> : <div {...emptyImgProps}/>}
                     <Icon className='block-delete-btn' onClick={this.props.remove} type="delete" />
                     <Icon className='block-settings-btn' onClick={()=>{this.setState({ wrapperSettingsVisible: true})}} type="setting" />
-                    <Settings defaultValue={this.state.settings} onSave={this.onSave} save={this.saveSettings} visible={this.state.wrapperSettingsVisible} close={()=>{this.setState({ wrapperSettingsVisible: false})}}/>
+                    <Settings {...settingsProps}/>
                 </div>
             );
         }

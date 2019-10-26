@@ -4,30 +4,32 @@ import UploadImage from '../../components/Uploads/UploadImage';
 
 export default function(props) {
 
-    const { visible, close, onSave, defaultValue } = props;
+    const { visible, close, save, data, onSave } = props;
+
+    console.log(data);
 
     console.log(props);
 
     const justifyChange = e => {
-        props.save({
+        save({
             justifyClass: e.target.value
         });
     }
 
     const widthChange = e => {
-        props.save({
+        save({
             imgWidthClass: e.target.value
         });
     }
 
     const paddingTopChange = value => {
-        props.save({
-            paddingTop: value
+        save({
+            padding: value
         });
     }
 
     const assetSave = asset => {
-        props.save({
+        save({
             asset: asset
         });
     }
@@ -38,7 +40,7 @@ export default function(props) {
     }
 
     const heightChange = e => {
-        props.save({
+        save({
             height: e
         });
     }
@@ -55,37 +57,36 @@ export default function(props) {
             <div className="image-settings">
                 <div className="col">
                     <h3 style={{marginTop: 0}}>Justify</h3>
-                    <Radio.Group onChange={justifyChange} defaultValue="a">
+                    <Radio.Group onChange={justifyChange} defaultValue={data.justifyClass || "justify-center"}>
                         <Radio.Button value="justify-center">Center</Radio.Button>
                         <Radio.Button value="justify-left">Left</Radio.Button>
                         <Radio.Button value="justify-right">Right</Radio.Button>
                     </Radio.Group>
                     <h3>Width</h3>
-                    <Radio.Group onChange={widthChange} defaultValue="a">
+                    <Radio.Group onChange={widthChange} defaultValue={data.imgWidthClass || "default-width"}>
                         <Radio.Button value="default-width">Default</Radio.Button>
                         <Radio.Button value="full-width">Full Width</Radio.Button>
                     </Radio.Group>
                 </div>
                 <div className="col">
                     <h3 style={{marginTop: 0}}>Image Path</h3>
-                    <UploadImage defaultValue={defaultValue} save={assetSave}/>
+                    <UploadImage defaultValue={data && data.asset} save={assetSave}/>
                 </div>
                 <div className="col">
-                    <h3 style={{marginTop: 0}}>Padding Top</h3>
+                    <h3 style={{marginTop: 0}}>Padding (top/bottom)</h3>
                     <InputNumber
-                        defaultValue={100}
+                        defaultValue={data.padding}
                         min={0}
                         max={100}
-                        formatter={value => `${value}%`}
-                        parser={value => value}
+                        step={1}
                         onChange={paddingTopChange}
                     />
                 </div>
                 <div className="col">
                     <h3 style={{marginTop: 0}}>Height</h3>
-                    <Checkbox onChange={()=>{}}>Auto</Checkbox>
+                    <Button onClick={()=>{heightChange('auto')}}>Auto</Button>
                     <InputNumber
-                        defaultValue={300}
+                        defaultValue={(data.height && (data.height instanceof Number)) || 0}
                         min={0}
                         max={1000}
                         step={50}

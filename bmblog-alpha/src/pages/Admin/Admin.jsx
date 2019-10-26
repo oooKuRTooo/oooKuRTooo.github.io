@@ -9,7 +9,7 @@ const { Content, Sider } = Layout;
 
 export default function(props) {
 
-    const { posts } = props;
+    const { posts, goToPage } = props;
 
     const getPage = () => {
         switch(props.page) {
@@ -26,21 +26,21 @@ export default function(props) {
         <Layout className='admin'>
             <Sider collapsible>
                 <Menu theme="dark" defaultSelectedKeys={[props.page]} mode="inline">
-                    <Menu.Item key="posts">
+                    <Menu.Item key="posts" onClick={()=>goToPage('/admin/posts')}>
                         <Icon type="snippets" />
-                        <span><Link Link to='/admin/posts'>Posts</Link></span>
+                        <span>Posts</span>
                     </Menu.Item>
                     <Menu.Item key="files">
                         <Icon type="file" />
-                        <span><Link Link to='/admin/files'>Files</Link></span>
+                        <span>files</span>
                     </Menu.Item>
                     <Menu.Item key="stats">
                         <Icon type="pie-chart" />
-                        <span><Link Link to='/admin/stats'>Statistics</Link></span>
+                        <span>Statistics</span>
                     </Menu.Item>
-                    <Menu.Item key="settings">
+                    <Menu.Item key="settings" onClick={()=>goToPage('/admin/settings')}>
                         <Icon type="setting" />
-                        <span><Link Link to='/admin/settings'>Settings</Link></span>
+                        <span>Settings</span>
                     </Menu.Item>
                 </Menu>
             </Sider>

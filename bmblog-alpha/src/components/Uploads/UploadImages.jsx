@@ -5,14 +5,17 @@ import { CMS_URL, QUEST_TOKEN, SITE_URL } from '../../constants';
 import AssetsList from './AssetsList';
 import { Modal } from 'antd';
 import uniqid from 'uniqid';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class UploadImages extends React.Component {
+class UploadImages extends React.Component {
     state = {
         previewVisible: false,
         previewImage: '',
         fileList: this.props.initData || [],
         assetsVisible: false,
-        assets: []
+        assets: [],
+        token: this.props.token || QUEST_TOKEN
     };
 
     handleChange = ({ fileList }) => {
@@ -43,7 +46,7 @@ export default class UploadImages extends React.Component {
             return { file };
         });
 
-        const resultsResponse = await addAsset(CMS_URL, QUEST_TOKEN, formData);
+        const resultsResponse = await addAsset(CMS_URL, this.state.token, formData);
 
         resultsResponse.assets.map( (item, index) => {
             result[index] = { 
@@ -115,3 +118,15 @@ export default class UploadImages extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        token: state.admin.token
+    }
+}
+
+const mapDispatchToProps = (dispath) => {
+    return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadImages);

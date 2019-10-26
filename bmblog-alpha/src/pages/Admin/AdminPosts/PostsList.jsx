@@ -22,7 +22,8 @@ const reorder = (list, startIndex, endIndex) => {
 class PostsList extends Component {
 
     state = {
-        posts: this.props.posts
+        posts: this.props.posts,
+        token: this.props.token || QUEST_TOKEN
     }
 
     componentWillReceiveProps(nextProps) {
@@ -47,7 +48,7 @@ class PostsList extends Component {
     }
 
     removePost = id => {
-        deleteCollectionItem(CMS_URL, QUEST_TOKEN, 'posts', id).then(()=>{
+        deleteCollectionItem(CMS_URL, this.state.token, 'posts', id).then(()=>{
             this.props.updatePosts();
         });
     }
@@ -70,7 +71,8 @@ class PostsList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.global.posts
+        posts: state.global.posts,
+        token: state.admin.token
     }
 }
 

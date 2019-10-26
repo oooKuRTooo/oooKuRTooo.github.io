@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import Trumbowyg from 'react-trumbowyg';
 import 'trumbowyg/dist/plugins/emoji/trumbowyg.emoji.min';
 import 'trumbowyg/dist/plugins/pasteembed/trumbowyg.pasteembed.min';
+import 'trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily';
 import 'trumbowyg/dist/plugins/giphy/trumbowyg.giphy';
-import 'trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min';
 import 'trumbowyg/dist/plugins/emoji/ui/trumbowyg.emoji.css';
 import 'trumbowyg/dist/plugins/giphy/ui/trumbowyg.giphy.min.css';
 import 'trumbowyg/dist/ui/sass/trumbowyg.scss';
@@ -30,8 +30,8 @@ export default class Text extends Component {
         disabled: false,
         initData: (this.props.data && this.props.data.text) || null,
         wrapperSettingsVisible: false,
-        settings: {
-            justifyClass: 'center'
+        settings: (this.props.data && this.props.data.settings) || {
+            justifyClass: 'center',
         }
     }
 
@@ -44,8 +44,10 @@ export default class Text extends Component {
 
     onBlur = e => {
         const { id, save } = this.props;
+        const { settings } = this.state;
         save(id, {
-            text: e.target.innerHTML
+            text: e.target.innerHTML,
+            settings
         });
         this.setState({ isFocus: false });
     }
@@ -65,15 +67,33 @@ export default class Text extends Component {
         this.setState({
             settings: {...this.state.settings, ...settings}
         });
+        const { id, save } = this.props;
+        save(id, {
+            settings: {...this.state.settings, ...settings}
+        });
     }
 
     render() {
 
-        const wrapperClass = `text-wrapper ${this.state.isFocus ? 'focus' : ''} ${this.props.isEditMode ? 'edit' : ''} ${this.state.settings.justifyClass}`
+        const { settings, isFocus } = this.state;
+
+        const wrapperProps = {
+            className: `text-wrapper ${isFocus ? 'focus' : ''} ${this.props.isEditMode ? 'edit' : ''} ${settings.justifyClass}`,
+            style: {
+                padding: (settings.padding && `${settings.padding}vh 0`) || '5vh 0'
+            }
+        }
+
+        const settingsProps = {
+            save: this.saveSettings,
+            visible: this.state.wrapperSettingsVisible,
+            close: ()=>{this.setState({ wrapperSettingsVisible: false})},
+            data: {...settings}
+        }
 
         const readMode = () => {
             return (
-                <div className={wrapperClass}>
+                <div {...wrapperProps}>
                     <div className='text-block' dangerouslySetInnerHTML={{ __html: this.state.initData }}/>
                 </div>
             );
@@ -81,8 +101,8 @@ export default class Text extends Component {
 
         const editMode = () => {
             return (
-                <div className={wrapperClass}>
-                    <div className='trumbowyg-dark' style={{width: '50%', padding: '20px 0'}}>
+                <div {...wrapperProps}>
+                    <div className='trumbowyg-dark'>
                         {!this.state.disabled ?
                         <Trumbowyg 
                             placeholder='Enter the text here'
@@ -94,6 +114,13 @@ export default class Text extends Component {
                                 {
                                     giphy: {
                                         apiKey: 'x2vNzZiicyVDtCyEVULl6yCL8ADKoubm'
+                                    },
+                                    fontfamily: {
+                                        fontList: [
+                                            {name: 'Arial', family: 'Arial, Helvetica, sans-serif'},
+                                            {name: 'Open Sans', family: '\'Open Sans\', sans-serif'},
+                                            {name: 'Avenir Next Cyr', family: 'Avenir Next Cyr, sans-serif'}
+                                        ]
                                     }
                                 }
                             }
@@ -104,9 +131,9 @@ export default class Text extends Component {
                             disabled={this.state.disabled}
                         /> : null }
                     </div>
-                    <Icon className='block-delete-btn' onClick={()=>{ this.props.remove()}} type="delete" />
+                    <Icon className='block-delete-btn' onClick={()=>{ if (!this.state.isFocus) this.props.remove()}} type="delete" />
                     <Icon className='block-settings-btn' onClick={()=>{this.setState({ wrapperSettingsVisible: true})}} type="setting" />
-                    <Settings save={this.saveSettings} visible={this.state.wrapperSettingsVisible} close={()=>{this.setState({ wrapperSettingsVisible: false})}}/>
+                    <Settings {...settingsProps}/>
                 </div>);
         }
 

@@ -7,12 +7,16 @@
     box-sizing: border-box;
     position: relative;
 
+    * {
+        margin: 0;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
     & .text-block {
         width: 50%;
-
-        p {
-            padding: 20px 0;
-        }
     }
 
     &.edit:hover {
@@ -113,6 +117,10 @@
     }
 }
 
+.trumbowyg-dark {
+    width: 50%;
+}
+
 /*==================================================
     media queries
 ==================================================*/
@@ -121,60 +129,36 @@
 @media (max-width: 575.98px) {
 
     .text-wrapper .text-block {
-        width: 90%;
-
-        p {
-            padding: 20px 0;
-        }
+        width: 85%;
     }
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
     .text-wrapper .text-block {
         width: 80%;
-
-        p {
-            padding: 20px 0;
-        }
     }
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
     .text-wrapper .text-block {
         width: 70%;
-
-        p {
-            padding: 20px 0;
-        }
     }
 }
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .text-wrapper .text-block {
         width: 60%;
-
-        p {
-            padding: 20px 0;
-        }
     }
 }
 /* large devices+ (large desktops, 1200px and up)*/
 @media (min-width: 1200px) and (max-width: 1599.98px) {
     .text-wrapper .text-block {
         width: 50%;
-
-        p {
-            padding: 20px 0;
-        }
     }
 }
 /* Extra large devices (large desktops, 1600px and up)*/
 @media (min-width: 1600px) {
     .text-wrapper .text-block {
-        width: 40%;
-
-        p {
-            padding: 20px 0;
-        }
+        width: 50%;
     }
 }

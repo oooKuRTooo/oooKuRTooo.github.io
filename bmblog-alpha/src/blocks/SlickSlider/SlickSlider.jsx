@@ -12,7 +12,8 @@ export default class SlickSlider extends Component {
         initData: (this.props.data && this.props.data.text) || null,
         wrapperSettingsVisible: false,
         settings: {
-            assets: (this.props.data && this.props.data.settings.assets) || []
+            assets: (this.props.data && this.props.data.settings.assets) || [],
+            padding: (this.props.data && this.props.data.settings.paddingTop) || '5vh 0'
         }
     }
 
@@ -24,20 +25,12 @@ export default class SlickSlider extends Component {
     }
 
     saveSettings = settings => {
-        console.log('!!!settings');
-        console.log(settings);
-        this.setState({
-            settings: {...this.state.settings, ...settings}
-        });
-    }
-
-    saveSettings = settings => {
         this.setState({
             settings: {...this.state.settings, ...settings}
         });
         const { id, save } = this.props;
         save(id, {
-            settings: settings
+            settings: {...this.state.settings, ...settings}
         });
     }
 
@@ -48,15 +41,34 @@ export default class SlickSlider extends Component {
             slidesToShow: this.state.settings.assets.length < 3 ? this.state.settings.assets.length : 3 ,
             speed: 500,
             infinite: false,
+            responsive: [
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 2,
+                  }
+                }
+            ]
         };
 
         const slideList = this.state.settings.assets.map(asset => <img style={{ margin: '20px 0'}} src={asset.fullPath}/>);
 
-        const wrapperClass = `block-slick-slider ${this.props.isEditMode ? 'edit' : ''} ${this.state.settings.justifyClass}`;
+        const wrapperProps = {
+            className: `block-slick-slider ${this.props.isEditMode ? 'edit' : ''} ${this.state.settings.justifyClass}`,
+            style: {
+                padding: this.state.settings.padding
+            }
+        }
 
         const readMode = () => {
             return (
-                <div className={wrapperClass}>
+                <div {...wrapperProps}>
                     <Slider {...settings}>
                         {slideList.length > 0 ? slideList : <div className="empty-slick-slide"></div>}
                     </Slider>
@@ -66,7 +78,7 @@ export default class SlickSlider extends Component {
 
         const editMode = () => {
             return (
-                <div className={wrapperClass}>
+                <div {...wrapperProps}>
                     <Slider {...settings}>
                         {slideList.length > 0 ? slideList : <div className="empty-slick-slide"></div>}
                     </Slider>

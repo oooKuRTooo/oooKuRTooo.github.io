@@ -54,7 +54,7 @@ export default function(props) {
           onClose={close}
           visible={visible}
         >
-            Published <Switch onChange={publishedSave} defaultChecked={initData.isPublished} className='settings-item'/>
+            <h4>Published</h4> <Switch onChange={publishedSave} defaultChecked={initData.isPublished} className='settings-item'/>
             <Input defaultValue={initData.title} onChange={titleSave} placeholder="Title" className='settings-item' />
             <Input defaultValue={initData.category} onChange={categorySave} placeholder="Category" className='settings-item' />
             <TextArea defaultValue={initData.excerpt} onChange={excerptSave} rows={4} placeholder="Excerpt" className='settings-item'/>

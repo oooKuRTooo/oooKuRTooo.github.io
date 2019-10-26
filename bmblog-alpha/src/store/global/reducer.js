@@ -12,6 +12,7 @@ export default function(state = initialState, action) {
       return { ...state, ...action.payload };
 
     case 'UPDATE_POSTS':
+      console.log('update');
       return { ...state, ...action.payload };
 
     default:

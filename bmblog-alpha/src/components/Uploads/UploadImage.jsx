@@ -3,6 +3,8 @@ import { Upload, Icon, message, Button } from 'antd';
 import { getAssets, addAsset } from '../../plugins/cockpitRequests';
 import { CMS_URL, QUEST_TOKEN, SITE_URL } from '../../constants';
 import AssetsList from './AssetsList';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 function getBase64(img, callback) {
     const reader = new FileReader();
@@ -18,13 +20,14 @@ function beforeUpload(file) {
     return isJpgOrPng;
 }
 
-export default class UploadImage extends React.Component {
+class UploadImage extends React.Component {
 
     state = {
         loading: false,
         assetsVisible: false,
         assets: [],
-        imageUrl: this.props.defaultValue.fullPath || ''
+        imageUrl: this.props.defaultValue.fullPath || '',
+        token: this.props.token || QUEST_TOKEN
     };
 
     handleChange = info => {
@@ -36,7 +39,7 @@ export default class UploadImage extends React.Component {
             // Get this url from response in real world.
             const formData = new FormData;
             formData.append("files[]", info.file.originFileObj);
-            addAsset(CMS_URL, QUEST_TOKEN, formData).then(res => {
+            addAsset(CMS_URL, this.state.token, formData).then(res => {
                 const asset = { 
                     path: `/cockpit/storage/uploads${res.assets[0].path}`,
                     fullPath: `${SITE_URL}/cockpit/storage/uploads${res.assets[0].path}`
@@ -52,7 +55,9 @@ export default class UploadImage extends React.Component {
             this.setState({
                 assets: obj.assets,
                 assetsVisible: true
-            })
+            });
+            console.log('here');
+            console.log(obj);
         });
     }
 
@@ -98,3 +103,15 @@ export default class UploadImage extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        token: state.admin.token
+    }
+}
+
+const mapDispatchToProps = (dispath) => {
+    return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UploadImage);

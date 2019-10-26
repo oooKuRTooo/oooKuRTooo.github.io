@@ -8,16 +8,20 @@
 }
 
 .block-wrapper {
+    width: 100%;
     box-sizing: border-box;
 
     // &.edit { outline: 1px dashed transparent; outline-offset: -4px; }
     // &.edit:hover { outline: 1px dashed #03A9F4; outline-offset: -4px; }
 
-    // &.edit .block-wr-item { outline: 1px dashed transparent; outline-offset: -4px; }
-    // &.edit:hover .block-wr-item { outline: 1px dashed #03A9F4; outline-offset: -4px; }
+    &.edit .block-wr-item { outline: 1px dashed transparent; outline-offset: -1px; }
+    &.edit:hover .block-wr-item { outline: 1px dashed #03A9F4; outline-offset: -1px; }
 
     // &.edit-active { outline: 1px dashed #03A9F4; pointer-events: none; outline-offset: -4px; }
     // &.edit-active .block-wr-item { outline: 1px dashed #03A9F4; pointer-events: none; outline-offset: -4px; }
+
+    &.edit .stack-grid { outline: 1px dashed transparent; outline-offset: -1px; }
+    &.edit:hover .stack-grid { outline: 1px dashed #03A9F4; outline-offset: -1px; }
 }
 
 .blockwr-settings {
@@ -25,13 +29,16 @@
     justify-content: center;
 }
 
+.stack-grid {
+    margin: 0 auto;
+}
+
+.blockwr-settings-input {
+    margin: 10px;
+}
+
 
 /*==================================================
     media queries
 ==================================================*/
 
-/*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
-
-
-}

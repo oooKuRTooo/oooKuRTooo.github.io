@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Icon, Input, Button, message } from 'antd';
+import { CMS_URL, QUEST_TOKEN } from '../../constants';
 
 export default function(props) {
 
@@ -20,28 +21,36 @@ export default function(props) {
             return response;
         }
 
-        fetch('http://localhost/testcms.loc/cms/api/cockpit/authUser', {
+        fetch(`${CMS_URL}/api/cockpit/authUser?token=${QUEST_TOKEN}`, {
             method: 'post',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Cockpit-Token': `${data.get('token')}`},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 user: `${data.get('username')}`,
                 password: `${data.get('password')}`
             })
         })
-        .then(handleErrors)
-        .then(user => user.json())
-        .then(user => {message.success('Success!', 1); setIsLoading(false); props.authorize({
-            username: data.get('username'),
-            password: data.get('password'),
-            token: data.get('token')
-        })})
-        .catch(error => {message.success('Success!', 1); setIsLoading(false); props.authorize({
-            username: data.get('username'),
-            password: data.get('password'),
-            token: data.get('token')
-        })});
+        .then(response => {
+            if (response.status !== 200) {
+                throw new Error("Not 200 response")
+            } else {
+                return response.json()
+            }
+        })
+        .then(user => {
+            message.success('Success!', 1); 
+            setIsLoading(false); 
+            props.authorize({
+                username: user.user,
+                password: data.get('password'),
+                token: user.api_key,
+                isAuth: true
+            });
+        })
+        .catch(error => {
+            message.error('Fail!', 1); 
+            setIsLoading(false); 
+            console.log(error);
+        })
     }
 
     return (
@@ -59,12 +68,6 @@ export default function(props) {
                         prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         type="password"
                         placeholder="Password"
-                    />
-                    <Input name='lol'
-                        name='token'
-                        prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                        type="password"
-                        placeholder="Token"
                     />
                 </Form.Item>
                 <Form.Item>
